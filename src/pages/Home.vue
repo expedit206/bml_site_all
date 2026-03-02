@@ -1,5 +1,8 @@
 <template>
   <main>
+        <div class="w-full h-10 bg-white dark:bg-black text-center text-lg text-secondary-900 dark:text-white flex items-center justify-center mb-4">
+          Test Dark Mode: Ce bloc doit être noir en mode sombre
+        </div>
     <!-- Hero Section - Premium -->
     <section class="relative bg-white dark:bg-secondary-900 py-20 md:py-32 overflow-hidden">
       <!-- Animated background elements -->
@@ -165,10 +168,16 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div v-for="(project, idx) in featuredProjects" :key="idx" class="group animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <div class="relative h-64 bg-gradient-to-br from-primary-500 to-secondary-600 dark:from-primary-700 dark:to-secondary-900 rounded-2xl overflow-hidden mb-6 hover-lift">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
-                {{ project.icon }}
+            <a v-if="project.link" :href="project.link" target="_blank" rel="noopener" class="block">
+              <div class="relative h-64 bg-gradient-to-br from-primary-500 to-secondary-600 dark:from-primary-700 dark:to-secondary-900 rounded-2xl overflow-hidden mb-6 hover-lift">
+                <img v-if="project.image" :src="project.image" alt="Image du projet" class="absolute inset-0 w-full h-full object-cover" />
+                <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
+                  {{ project.category }}
+                </div>
               </div>
+            </a>
+            <div v-else class="relative h-64 bg-gradient-to-br from-primary-500 to-secondary-600 dark:from-primary-700 dark:to-secondary-900 rounded-2xl overflow-hidden mb-6 hover-lift">
+              <img v-if="project.image" :src="project.image" alt="Image du projet" class="absolute inset-0 w-full h-full object-cover" />
               <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
                 {{ project.category }}
               </div>
@@ -251,28 +260,46 @@ const benefits = [
 
 const featuredProjects = [
   {
-    icon: '📲',
+    image: '/img/acadecol.png',
+    name: 'Acadecol',
+    category: 'Plateforme éducative',
+    result: 'Solution digitale pour la gestion scolaire, adoption nationale, impact sur 100+ établissements.',
+    tech: ['Laravel', 'Vue.js', 'MySQL'],
+    impact: '100+ écoles'
+  },
+  {
+    image: '/img/Boris-Tech.png',
+    name: 'Boristech',
+    category: 'Tech & Innovation',
+    result: 'Développement d\'outils sur-mesure pour PME, automatisation des processus, gain de productivité.',
+    tech: ['React', 'Node.js', 'PostgreSQL'],
+    impact: 'Productivité x2'
+  },
+  {
+    image: '/img/Stella-Wabo.png',
+    name: 'Stella Wabo',
+    category: 'Branding & Web',
+    result: 'Création d\'une identité visuelle forte et site web performant pour une artiste reconnue.',
+    tech: ['WordPress', 'Figma', 'SEO'],
+    impact: 'Visibilité accrue'
+  },
+  {
+    image: '/img/abec.png',
+    name: 'ABEC',
+    category: 'Plateforme sociale',
+    result: 'Plateforme de bien-être universel, accès direct à universalwelfare.org, impact international.',
+    tech: ['Laravel', 'Vue.js', 'MySQL'],
+    impact: 'Portée mondiale',
+    link: 'https://universalwelfare.org/'
+  },
+  {
+    image: '/img/studenapp.png',
     name: 'StudentApp',
     category: 'Mobile & Web',
-    result: 'Plateforme pour 50k+ étudiants. Réduction du taux d\'absentéisme de 40%.',
+    result: "Plateforme pour 50k+ étudiants. Réduction du taux d'absentéisme de 40%.",
     tech: ['React Native', 'Node.js', 'PostgreSQL'],
-    impact: '+50k utilisateurs'
-  },
-  {
-    icon: '📋',
-    name: 'PreInscription Platform',
-    category: 'Platform SaaS',
-    result: 'Système d\'admission automatisé. Traitement x3 plus rapide.',
-    tech: ['Vue.js', 'MongoDB', 'AWS'],
-    impact: '+200% efficacité'
-  },
-  {
-    icon: '✈️',
-    name: 'NgueNgan Travel',
-    category: 'E-commerce',
-    result: 'Site de réservation visuel. Conversion +85% vs ancien site.',
-    tech: ['Next.js', 'Stripe', 'Firebase'],
-    impact: '+85% conversion'
+    impact: '+50k utilisateurs',
+    link: 'https://studentapp.espacecameroun.com/'
   }
 ]
 </script>

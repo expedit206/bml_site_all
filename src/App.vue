@@ -1,5 +1,5 @@
 <template>
-  <div :class="['min-h-screen transition-colors duration-300', isDark ? 'dark' : '']">
+  <div class="min-h-screen transition-colors duration-300">
     <Header />
     <RouterView />
     <Footer />

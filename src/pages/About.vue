@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- Header Section -->
-    <section class="relative bg-gradient-to-br from-primary-500/10 via-secondary-900 to-secondary-900 dark:from-primary-900/20 dark:to-secondary-950 text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
@@ -125,8 +125,11 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div v-for="(member, idx) in team" :key="idx" class="bg-gradient-to-br rounded-2xl p-8 text-white hover-lift animate-fade-in-up" :class="member.gradientClass" :style="{ animationDelay: `${idx * 100}ms` }">
-            <div class="text-6xl mb-4">{{ member.icon }}</div>
+          <div v-for="(member, idx) in team" :key="idx" class="bg-gradient-to-br rounded-2xl p-8 shadow-lg border border-black hover-lift animate-fade-in-up" :class="member.gradientClass" :style="{ animationDelay: `${idx * 100}ms` }">
+            <div class="flex justify-center mb-4 bg-gray-900 rounded-lg ">
+              <img v-if="member.photo" :src="member.photo" :alt="member.name" class="w-full aspect-square rounded-2xl object-cover  shadow-lg " />
+              <span v-else class="text-6xl">{{ member.icon }}</span>
+            </div>
             <h3 class="text-2xl font-black mb-1">{{ member.name }}</h3>
             <p class="text-sm font-semibold opacity-90 mb-4">{{ member.title }}</p>
             <p class="text-sm leading-relaxed opacity-90">{{ member.bio }}</p>
@@ -243,36 +246,70 @@ const values = [
 
 const team = [
   {
-    icon: '👨‍💼',
-    name: 'Saïd Bah',
-    title: 'Founder & CTO',
-    bio: 'Full-stack engineer avec 12 ans d\'expérience. Legacy à cloud migration specialist. Serial entrepreneur.',
-    skills: 'Backend, DevOps, Architecture',
-    gradientClass: 'from-blue-600 to-blue-900'
+    icon: '🖥️',
+    name: 'Lontsi Parfait',
+    title: 'Développeur Back-end',
+    bio: 'Architecture système, conception technique, intégration des services tiers et monitoring applicatif.',
+    skills: 'Laravel, Microservices, DevOps',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/parfait.png'
   },
   {
-    icon: '👨‍💻',
-    name: 'Olivier Durant',
-    title: 'Lead Frontend Architect',
-    bio: 'Expert React/Next.js. Créateur de design systems award-winning. UX-obsessed developer.',
-    skills: 'React, Next.js, Performance',
-    gradientClass: 'from-purple-600 to-purple-900'
+    icon: '🖥️',
+    name: 'Mciagnessi Dominique',
+    title: 'Développeur Back-end',
+    bio: 'Développement et maintenance des API, gestion des bases de données, sécurité et performance côté serveur.',
+    skills: 'Laravel, SQL, REST',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/mciagnessi dominique.jpg'
   },
   {
-    icon: '👩‍💻',
-    name: 'Émilie Rousseau',
-    title: 'Mobile Lead',
-    bio: '10 ans de développement iOS/Android. 4 apps top 100 App Store. Architecte de platforms à 1M+ users.',
-    skills: 'iOS, Android, React Native',
-    gradientClass: 'from-pink-600 to-pink-900'
+    icon: '💻',
+    name: 'Nguimfack Yannick',
+    title: 'Développeur Front-end',
+
+
+    bio: 'devops .Développement de l’interface utilisateur, optimisation UX, création de composants interactifs .',
+    skills: 'Vue.js, React, UI/UX',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/yannick.png'
   },
   {
-    icon: '👨‍🔬',
-    name: 'Marc Lemaire',
-    title: 'DevOps & Infrastructure',
-    bio: 'Kubernetes expert. AWS architect. Zéro-downtime deployment specialist. 24/7 monitoring master.',
-    skills: 'Kubernetes, AWS, Terraform',
-    gradientClass: 'from-green-600 to-green-900'
+    icon: '💻',
+    name: 'Fouadzeu Boris',
+    title: 'Développeur Front-end',
+    bio: 'Développement à partir des maquettes, ergonomie, création de composants réutilisables.',
+    skills: 'Vue.js, React, Ergonomie',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/boris.png'
+  },
+  {
+    icon: '💻',
+    name: 'Simo Boris',
+    title: 'Développeur Front-end',
+    bio: 'Optimisation de l’expérience utilisateur, création d’interfaces modernes et performantes.',
+    skills: 'Vue.js, React, Performance',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/aubin.jpeg'
+
+  },
+  {
+    icon: '🎨',
+    name: 'Waffo Rostand',
+    title: 'Conseiller technique & Designer web',
+    bio: 'Conseil technique, conception graphique et design web, veille sur les tendances UI/UX.',
+    skills: 'Design web, UI/UX, Conseil',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/waffo rostand.png'
+  },
+  {
+    icon: '🖌️',
+    name: 'Kenhago Stephy',
+    title: 'Infographe',
+    bio: 'Création de visuels, illustrations et supports graphiques pour les projets.',
+    skills: 'Infographie, Illustration, Créativité',
+    gradientClass: 'from-gray-100 to-gray-50',
+    photo: '/img/equipe/stephie.jpeg'
   }
 ]
 

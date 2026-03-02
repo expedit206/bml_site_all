@@ -41,15 +41,7 @@
             </svg>
           </button>
 
-          <select
-            v-model="language"
-            @change="changeLanguage"
-            class="px-3 py-2 text-sm font-medium text-secondary-700 dark:text-secondary-300 bg-secondary-100 dark:bg-secondary-800 rounded-lg border-0 cursor-pointer hover:bg-secondary-200 dark:hover:bg-secondary-700 transition-colors"
-          >
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-          </select>
-
+    
           <!-- Mobile Menu Button -->
           <button
             @click="toggleMenu"

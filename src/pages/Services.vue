@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- Header Section -->
-    <section class="relative bg-gradient-to-br from-primary-500/10 via-secondary-900 to-secondary-900 dark:from-primary-900/20 dark:to-secondary-950 text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>

@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- Header Section -->
-    <section class="relative bg-gradient-to-br from-primary-500/10 via-secondary-900 to-secondary-900 dark:from-primary-900/20 dark:to-secondary-950 text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
@@ -15,10 +15,10 @@
             <span class="text-sm font-semibold text-primary-300">Nos Succès</span>
           </div>
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
-            Nos Réalisations
+            {{ $t('realisations.title') }}
           </h1>
           <p class="text-lg text-secondary-200 max-w-2xl leading-relaxed">
-            Découvrez comment nous avons aidé 30+ clients à transformer leurs visions en produits digitaux performants et profitables.
+            {{ $t('realisations.description') }}
           </p>
         </div>
       </div>
@@ -59,6 +59,7 @@
 
               <!-- Results -->
               <div class="grid grid-cols-3 gap-4 py-6 border-y border-secondary-200 dark:border-secondary-700">
+                <div class="col-span-3 text-primary-600 font-bold mb-2 text-sm uppercase">{{ $t('realisations.results') }}</div>
                 <div v-for="result in project.results" :key="result.label" class="text-center">
                   <div class="text-3xl font-black text-primary-500 mb-1">{{ result.value }}</div>
                   <p class="text-xs text-secondary-600 dark:text-secondary-400">{{ result.label }}</p>
@@ -83,11 +84,15 @@
             </div>
 
             <!-- Visual -->
-            <div class="relative h-96 bg-gradient-to-br rounded-2xl overflow-hidden hover-lift group" :class="project.gradientClass">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-9xl opacity-20 group-hover:scale-110 transition-transform duration-300">
-                  {{ project.icon }}
-                </div>
+            <div class="relative h-96 rounded-2xl overflow-hidden hover-lift group bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700">
+              <template v-if="project.image">
+                <a v-if="project.link" :href="project.link" target="_blank" rel="noopener">
+                  <img :src="project.image" :alt="project.name" class="object-cover w-full h-full cursor-pointer" />
+                </a>
+                <img v-else :src="project.image" :alt="project.name" class="object-cover w-full h-full" />
+              </template>
+              <div v-else class="flex items-center justify-center h-full w-full text-7xl opacity-20">
+                {{ project.icon }}
               </div>
             </div>
           </div>
@@ -116,7 +121,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16 animate-fade-in-up">
           <h2 class="text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Ce que Disent Nos Clients
+            {{ $t('realisations.testimonials') }}
           </h2>
         </div>
 
@@ -163,54 +168,171 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t: $t } = useI18n()
+
 const projects = [
   {
     icon: '📲',
     name: 'StudentApp',
-    category: 'Mobile & Education',
-    challenge: 'L\'université manquait de système de gestion d\'emploi du temps efficace. Les étudiants avaient plusieurs applications, calendriers manuels, et zéro notification de changements de classe.',
-    solution: 'Nous avons développé une application mobile cross-platform (iOS/Android) intégrée au système académique existant. Notifications real-time, horaires synchronisés, et interface intuitive pour 50k+ utilisateurs.',
+    category: 'Mobile & Web',
+    challenge: "Faciliter la gestion scolaire et la communication pour 50k+ étudiants.",
+    solution: "Plateforme mobile et web avec suivi des absences, notifications, et accès parent/élève.",
     results: [
-      { label: 'Utilisateurs Actifs', value: '50k+' },
-      { label: 'Réduction Absentéisme', value: '-40%' },
-      { label: 'Rating App Store', value: '4.8★' }
+      { label: 'Utilisateurs', value: '+50k' },
+      { label: 'Taux d\'absentéisme', value: '-40%' },
+      { label: 'Établissements', value: '100+' }
     ],
-    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'Firebase'],
-    quote: 'StudentApp a transformé l\'expérience de nos étudiants. Plus de confusion, plus d\'absences. C\'est un must-have pour chaque université maintenant.',
-    client: 'Dr. Jean Dupont, Directeur Académique',
-    gradientClass: 'from-blue-500/30 to-cyan-500/30'
+    technologies: ['React Native', 'Node.js', 'PostgreSQL'],
+    quote: "StudentApp a révolutionné la gestion scolaire et la communication entre parents et établissements.",
+    client: 'Espace Cameroun',
+    gradientClass: '',
+    link: 'https://studentapp.espacecameroun.com/',
+    image: '/img/studenapp.png'
   },
   {
     icon: '📋',
     name: 'PreInscription Platform',
     category: 'Platform SaaS',
-    challenge: 'Le centre de formation traitait 3000 candidatures par an via email et formulaires PDF. Processus manuel de 6 semaines, taux d\'erreur 15%, aucune traçabilité.',
-    solution: 'Platform SaaS complète avec formulaires adaptatifs, vérification temps-réel, scoring automatique des candidatures, et tableau de bord pour admission officers. Intégration CRM et Slack.',
+    challenge: "Le centre de formation traitait 3000 candidatures par an via email et formulaires PDF. Processus manuel de 6 semaines, taux d'erreur 15%, aucune traçabilité.",
+    solution: "Platform SaaS complète avec formulaires adaptatifs, vérification temps-réel, scoring automatique des candidatures, et tableau de bord pour admission officers. Intégration CRM et Slack.",
     results: [
       { label: 'Traitement x3 Plus Rapide', value: '2 weeks' },
       { label: 'Réduction Erreurs', value: '-98%' },
       { label: 'Satisfaction Utilisateurs', value: '+95%' }
     ],
     technologies: ['Vue.js', 'MongoDB', 'AWS', 'Stripe'],
-    quote: 'Impossible de revenir à notre ancien processus. La plateforme nous sauve 100h de travail par campagne d\'admission.',
+    quote: "Impossible de revenir à notre ancien processus. La plateforme nous sauve 100h de travail par campagne d'admission.",
     client: 'Marie Leclerc, Responsable Admissions',
-    gradientClass: 'from-purple-500/30 to-pink-500/30'
+    gradientClass: 'from-purple-500/30 to-pink-500/30',
+    link: null,
+    image: '/img/preinsc.png'
   },
   {
     icon: '✈️',
     name: 'NgueNgan Travel',
     category: 'E-commerce',
-    challenge: 'Agence de voyage avec site web statique. Taux de conversion 1.2%, aucun système de réservation en ligne, 80% des bookings par téléphone.',
-    solution: 'Refonte complète avec Next.js, galerie visuelle des destinations, système de réservation en temps-réel avec paiement Stripe, recommandations AI, et dashboard pour l\'équipe.',
+    challenge: "Agence de voyage avec site web statique. Taux de conversion 1.2%, aucun système de réservation en ligne, 80% des bookings par téléphone.",
+    solution: "Refonte complète avec Next.js, galerie visuelle des destinations, système de réservation en temps-réel avec paiement Stripe, recommandations AI, et dashboard pour l'équipe.",
     results: [
       { label: 'Conversion +85%', value: '6.8%' },
       { label: 'Réservations Online', value: '92%' },
       { label: 'Revenu Annual', value: '+320%' }
     ],
     technologies: ['Next.js', 'Stripe', 'Firebase', 'Tailwind CSS'],
-    quote: 'C\'est incroyable. Nos clients réservent 24/7 sans nous appeler. Le site se vend presque seul maintenant.',
+    quote: "C'est incroyable. Nos clients réservent 24/7 sans nous appeler. Le site se vend presque seul maintenant.",
     client: 'Pierre Nguyen, CEO NgueNgan',
-    gradientClass: 'from-orange-500/30 to-red-500/30'
+    gradientClass: 'from-orange-500/30 to-red-500/30',
+    link: null,
+    image: '/img/nguengan.png'
+  },
+  {
+    icon: '🛒',
+    name: 'Espace Cameroun Marketplace',
+    category: 'Marketplace Local',
+    challenge: "Créer une plateforme de vente locale pour connecter vendeurs et acheteurs au Cameroun.",
+    solution: "Développement d'une marketplace moderne avec gestion des annonces, paiement sécurisé, et interface mobile responsive.",
+    results: [
+      { label: 'Vendeurs Inscrits', value: '500+' },
+      { label: 'Transactions Mensuelles', value: '2k+' },
+      { label: 'Satisfaction Clients', value: '97%' }
+    ],
+    technologies: ['Laravel', 'Vue.js 3', 'Inertia', 'Livewire', 'Filament', 'MySQL'],
+    quote: "La marketplace a boosté nos ventes et simplifié la gestion des commandes.",
+    client: 'Espace Cameroun',
+    gradientClass: '',
+    link: 'https://espacecameroun.com/acceuil',
+    image: '/img/Marketplace-Espace-Cameroun-.png'
+  },
+  {
+    icon: '🎓',
+    name: 'Acadecol Institut',
+    category: 'Institut de Formation',
+    challenge: "Moderniser la présence digitale d'un institut de formation.",
+    solution: "Site web institutionnel avec gestion des inscriptions, présentation des programmes, et espace membre.",
+    results: [
+      { label: 'Étudiants Inscrits', value: '1200+' },
+      { label: 'Programmes Affichés', value: '35' },
+      { label: 'Taux de Conversion', value: '22%' }
+    ],
+    technologies: ['WordPress', 'PHP', 'MySQL', 'Filament'],
+    quote: "Le site a facilité l'accès à l'information et augmenté les inscriptions.",
+    client: 'Acadecol',
+    gradientClass: '',
+    link: 'https://acadecol.espacecameroun.com/',
+    image: '/img/acadecol.png'
+  },
+  {
+    icon: '💍',
+    name: 'Stella Wabo Bijoux',
+    category: 'E-commerce Bijoux',
+    challenge: "Créer une boutique en ligne pour bijoux artisanaux.",
+    solution: "Site e-commerce avec galerie produits, paiement en ligne, et gestion des stocks.",
+    results: [
+      { label: 'Produits Vendus', value: '800+' },
+      { label: 'Clients Satisfaits', value: '99%' },
+      { label: 'Croissance Mensuelle', value: '+15%' }
+    ],
+    technologies: ['Laravel', 'Vue.js 3', 'Filament', 'MySQL'],
+    quote: "La boutique a permis d'atteindre une clientèle internationale.",
+    client: 'Stella Wabo',
+    gradientClass: '',
+    link: 'https://stellawabo.espacecameroun.com/',
+    image: '/img/Stella-Wabo.png'
+  },
+  {
+    icon: '🔌',
+    name: 'BorisTech Electronics',
+    category: 'E-commerce Electronique',
+    challenge: "Mettre en place une plateforme de vente d'appareils électroniques.",
+    solution: "Site e-commerce avec catalogue, filtres avancés, et paiement sécurisé.",
+    results: [
+      { label: 'Appareils Vendus', value: '1500+' },
+      { label: 'Taux de Satisfaction', value: '98%' },
+      { label: 'Commandes Mensuelles', value: '300+' }
+    ],
+    technologies: ['Laravel', 'React', 'PostgreSQL', 'Filament'],
+    quote: "La plateforme a simplifié la gestion des ventes et des stocks.",
+    client: 'BorisTech',
+    gradientClass: '',
+    link: 'http://boristech.evendeco.com/',
+    image: '/img/Boris-Tech.png'
+  },
+  {
+    icon: '🎉',
+    name: 'Evendeco Events',
+    category: 'Entreprise Événementiel',
+    challenge: "Présenter les services d'une entreprise d'événementiel en ligne.",
+    solution: "Site vitrine avec portfolio, formulaire de contact, et blog.",
+    results: [
+      { label: 'Événements Organisés', value: '250+' },
+      { label: 'Clients Entreprises', value: '60+' },
+      { label: 'Taux de Réussite', value: '100%' }
+    ],
+    technologies: ['WordPress', 'PHP', 'MySQL', 'Filament'],
+    quote: "Le site a permis de gagner en visibilité et d'attirer de nouveaux clients.",
+    client: 'Evendeco',
+    gradientClass: '',
+    link: 'https://evendeco.com/',
+    image: '/img/SUPER-DECOR-Décoration-evenementielle-.png'
+  },
+  {
+    icon: '🌍',
+    name: 'ABEC',
+    category: 'Plateforme sociale',
+    challenge: "Créer une plateforme de bien-être universel accessible à l'international.",
+    solution: "Développement d'une plateforme moderne avec accès direct à universalwelfare.org, gestion multilingue et expérience utilisateur optimisée.",
+    results: [
+      { label: 'Utilisateurs', value: '10k+' },
+      { label: 'Pays couverts', value: '20+' },
+      { label: 'Dons réalisés', value: '+50' }
+    ],
+    technologies: ['Laravel', 'Vue.js', 'MySQL'],
+    quote: "ABEC a permis de connecter des bénéficiaires et des donateurs à l'échelle mondiale.",
+    client: 'Universal Welfare',
+    gradientClass: '',
+    link: 'https://universalwelfare.org/',
+    image: '/img/abec.png'
   }
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- Header Section -->
-    <section class="relative bg-gradient-to-br from-primary-500/10 via-secondary-900 to-secondary-900 dark:from-primary-900/20 dark:to-secondary-950 text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
@@ -35,22 +35,22 @@
               <div class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-6 border border-secondary-200 dark:border-secondary-700">
                 <h3 class="font-black text-lg text-secondary-900 dark:text-white mb-4">Contact Rapide</h3>
                 <div class="space-y-4">
-                  <a href="tel:+33123456789" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
+                  <a href="tel:640472357" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
                     <div class="w-10 h-10 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all">
                       ☎️
                     </div>
                     <div>
                       <p class="text-xs text-secondary-600 dark:text-secondary-400">Téléphone</p>
-                      <p class="font-bold text-secondary-900 dark:text-white">+33 1 23 45 67 89</p>
+                      <p class="font-bold text-secondary-900 dark:text-white">640472357 / 696428651</p>
                     </div>
                   </a>
-                  <a href="mailto:contact@bodymac.fr" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
+                  <a href="mailto:bodymaclabs@gmail.com" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
                     <div class="w-10 h-10 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all">
                       📧
                     </div>
                     <div>
                       <p class="text-xs text-secondary-600 dark:text-secondary-400">Email (24h)</p>
-                      <p class="font-bold text-secondary-900 dark:text-white">contact@bodymac.fr</p>
+                      <p class="font-bold text-secondary-900 dark:text-white">bodymaclabs@gmail.com</p>
                     </div>
                   </a>
                 </div>
@@ -287,6 +287,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import emailjs from 'emailjs-com'
 
 const form = ref({
   name: '',
@@ -301,6 +302,8 @@ const form = ref({
 })
 
 const showSuccess = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
 
 const stats = [
   { number: '24h', label: 'Temps de réponse max' },
@@ -308,14 +311,20 @@ const stats = [
   { number: '95%', label: 'Satisfaction client' }
 ]
 
-const submitForm = () => {
-  // Log form data (in production, send to server)
-  console.log('Form submitted:', form.value)
-  
-  // Show success message
+const submitForm = async () => {
+  // Préparation EmailJS (à compléter avec tes identifiants)
+  // await window.emailjs.send('service_id', 'template_id', {
+  //   name: form.value.name,
+  //   email: form.value.email,
+  //   company: form.value.company,
+  //   phone: form.value.phone,
+  //   projectType: form.value.projectType,
+  //   budget: form.value.budget,
+  //   timeline: form.value.timeline,
+  //   message: form.value.message
+  // }, 'user_id')
+  sendEmail()
   showSuccess.value = true
-  
-  // Reset form after 3 seconds
   setTimeout(() => {
     form.value = {
       name: '',
@@ -330,5 +339,39 @@ const submitForm = () => {
     }
     showSuccess.value = false
   }, 3000)
+}
+
+const sendEmail = () => {
+  // Format date/heure d'envoi
+  const now = new Date();
+  const time = now.toLocaleString('fr-FR', {
+    dateStyle: 'full',
+    timeStyle: 'short'
+  });
+  emailjs.send(
+    'service_4dm2t9a', // Service ID
+    'template_ch05lag', // Template ID
+    {
+      from_name: form.value.name,
+      from_email: form.value.email,
+      company: form.value.company,
+      phone: form.value.phone,
+      projectType: form.value.projectType,
+      budget: form.value.budget,
+      timeline: form.value.timeline,
+      message: form.value.message,
+      time: time
+    },
+    'JB6T0Rx2FNlGbn1mL' // Public Key
+  ).then(
+    (result) => {
+      // Succès : afficher un message ou vider le formulaire
+      successMessage.value = 'Votre message a été envoyé avec succès.'
+    },
+    (error) => {
+      // Erreur : afficher un message d'erreur
+      errorMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
+    }
+  )
 }
 </script>

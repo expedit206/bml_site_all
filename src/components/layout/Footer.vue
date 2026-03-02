@@ -32,7 +32,6 @@
           <h4 class="text-lg font-bold mb-4 text-white">Entreprise</h4>
           <ul class="space-y-2 text-secondary-400 text-sm">
             <li><a href="#" class="hover:text-primary-400 transition-colors">À propos</a></li>
-            <li><a href="#" class="hover:text-primary-400 transition-colors">Blog</a></li>
             <li><a href="#" class="hover:text-primary-400 transition-colors">Carrières</a></li>
           </ul>
         </div>
