@@ -1,174 +1,184 @@
 <template>
-  <main class="bg-[var(--background)] text-[var(--text-main)] font-sans">
+  <main>
+    <!-- Header Section -->
     <section
-      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)]"
+      class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden"
     >
-      <div
-        class="absolute inset-0 pointer-events-none select-none overflow-hidden"
-      >
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 overflow-hidden">
         <div
-          class="absolute -right-20 top-1/4 text-[30vw] font-black uppercase text-outline opacity-[0.03] italic leading-none"
-        >
-          WORKS
-        </div>
+          class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"
+        ></div>
         <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end space-y-8 opacity-20"
-        >
-          <div class="text-right">
-            <div class="text-6xl font-black italic">50+</div>
-            <div
-              class="text-[10px] tracking-[0.4em] uppercase text-[var(--primary)]"
-            >
-              Deployed.Systems
-            </div>
-          </div>
-          <div class="text-right">
-            <div class="text-6xl font-black italic text-outline">100%</div>
-            <div class="text-[10px] tracking-[0.4em] uppercase">
-              Uptime.Architecture
-            </div>
-          </div>
-        </div>
+          class="absolute bottom-0 left-1/3 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-float"
+          style="animation-delay: 1s"
+        ></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="space-y-8">
+        <div class="space-y-6 animate-fade-in-up">
           <div
-            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit bg-[var(--background)]/80 backdrop-blur-sm"
+            class="inline-flex items-center gap-3 px-4 py-2 bg-primary-500/20 dark:bg-primary-500/30 rounded-full w-fit border border-primary-500/30"
           >
             <span
-              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
+              class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"
             ></span>
-            <span
-              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
-              >Nos Réalisations</span
+            <span class="text-sm font-semibold text-primary-300"
+              >Nos Succès</span
             >
           </div>
-
           <h1
-            class="text-6xl md:text-9xl font-medium tracking-tighter leading-[0.85]"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight"
           >
-            Impact <br />
-            <span class="text-[var(--primary)] text-outline italic"
-              >Tangible.</span
-            >
+            {{ $t("realisations.title") }}
           </h1>
-
-          <p
-            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
-          >
+          <p class="text-lg text-secondary-200 max-w-2xl leading-relaxed">
             {{ $t("realisations.description") }}
           </p>
         </div>
       </div>
     </section>
 
-    <section class="py-24">
+    <!-- Projects Grid - Case Studies -->
+    <section class="py-20 bg-white dark:bg-secondary-900">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 gap-32">
+        <div class="space-y-12">
           <div
             v-for="(project, idx) in projects"
             :key="idx"
-            class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+            :class="{ 'flex-row-reverse': idx % 2 === 1 }"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up"
+            :style="{ animationDelay: `${idx * 100}ms` }"
           >
-            <div
-              class="lg:col-span-5 space-y-8 order-2"
-              :class="idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2 lg:text-right'"
-            >
-              <div
-                :class="[
-                  'flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[var(--primary)]',
-                  idx % 2 !== 0 && 'lg:justify-end',
-                ]"
-              >
-                <span
-                  class="px-2 py-1 border border-[var(--primary)]/20 rounded-sm"
-                  >{{ project.category }}</span
+            <!-- Content -->
+            <div class="space-y-6">
+              <div class="inline-flex items-center gap-3 w-fit">
+                <div
+                  class="px-3 py-1 bg-primary-500/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-xs font-bold uppercase rounded-full"
                 >
-                <span class="w-12 h-px bg-[var(--primary)]/30"></span>
+                  {{ project.category }}
+                </div>
               </div>
 
               <h2
-                class="text-4xl md:text-6xl font-bold tracking-tighter leading-none group-hover:text-[var(--primary)] transition-colors duration-500"
+                class="text-2xl md:text-3xl lg:text-4xl font-black text-secondary-900 dark:text-white leading-tight"
               >
                 {{ project.name }}
               </h2>
 
-              <div class="space-y-4">
-                <p
-                  class="text-[var(--text-muted)] font-light leading-relaxed text-sm md:text-base"
+              <!-- Challenge -->
+              <div class="space-y-3">
+                <h3
+                  class="font-bold text-secondary-900 dark:text-white text-sm uppercase tracking-wide text-primary-600"
                 >
-                  <strong
-                    class="text-[var(--text-main)] block mb-1 uppercase text-xs tracking-tighter"
-                    >Le Défi :</strong
-                  >
+                  Le Défi
+                </h3>
+                <p
+                  class="text-secondary-700 dark:text-secondary-300 leading-relaxed"
+                >
                   {{ project.challenge }}
-                </p>
-                <p
-                  class="text-[var(--text-muted)] font-light leading-relaxed text-sm md:text-base italic border-l-2 border-[var(--border)] pl-4"
-                >
-                  "{{ project.quote }}"
                 </p>
               </div>
 
+              <!-- Solution -->
+              <div class="space-y-3">
+                <h3
+                  class="font-bold text-secondary-900 dark:text-white text-sm uppercase tracking-wide text-primary-600"
+                >
+                  Notre Solution
+                </h3>
+                <p
+                  class="text-secondary-700 dark:text-secondary-300 leading-relaxed"
+                >
+                  {{ project.solution }}
+                </p>
+              </div>
+
+              <!-- Results -->
               <div
-                :class="[
-                  'grid grid-cols-3 gap-4 border-t border-[var(--border)] pt-6',
-                  idx % 2 !== 0 && 'lg:justify-items-end text-right',
-                ]"
+                class="grid grid-cols-3 gap-4 py-6 border-y border-secondary-200 dark:border-secondary-700"
               >
-                <div v-for="result in project.results" :key="result.label">
-                  <div class="text-xl font-black italic leading-none">
+                <div
+                  class="col-span-3 text-primary-600 font-bold mb-2 text-sm uppercase"
+                >
+                  {{ $t("realisations.results") }}
+                </div>
+                <div
+                  v-for="result in project.results"
+                  :key="result.label"
+                  class="text-center"
+                >
+                  <div class="text-3xl font-black text-primary-500 mb-1">
                     {{ result.value }}
                   </div>
-                  <div
-                    class="text-[8px] uppercase tracking-widest text-[var(--text-muted)] mt-1"
-                  >
+                  <p class="text-xs text-secondary-600 dark:text-secondary-400">
                     {{ result.label }}
-                  </div>
+                  </p>
                 </div>
               </div>
 
-              <div
-                :class="[
-                  'flex flex-wrap gap-2',
-                  idx % 2 !== 0 && 'lg:justify-end',
-                ]"
-              >
-                <span
-                  v-for="tech in project.technologies"
-                  :key="tech"
-                  class="text-[9px] font-mono border border-[var(--border)] px-2 py-1 opacity-60"
+              <!-- Technologies -->
+              <div class="space-y-3">
+                <h3
+                  class="font-bold text-secondary-900 dark:text-white text-sm uppercase tracking-wide text-primary-600"
                 >
-                  {{ tech }}
-                </span>
+                  Stack Technologique
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    class="px-3 py-1 bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 text-sm font-semibold rounded-full"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Client Quote -->
+              <div
+                class="border-l-4 border-primary-500 pl-6 py-4 bg-secondary-50 dark:bg-secondary-800 rounded"
+              >
+                <p
+                  class="text-secondary-700 dark:text-secondary-300 italic mb-2"
+                >
+                  {{ project.quote }}
+                </p>
+                <p class="font-bold text-secondary-900 dark:text-white text-sm">
+                  — {{ project.client }}
+                </p>
               </div>
             </div>
 
+            <!-- Visual -->
             <div
-              class="lg:col-span-7 relative group order-1"
-              :class="idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'"
+              class="relative h-96 rounded-2xl overflow-hidden hover-lift group bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700"
             >
-              <div
-                class="relative overflow-hidden bg-black aspect-video rounded-sm border border-[var(--border)] group-hover:border-[var(--primary)]/50 transition-all duration-700"
-              >
-                <img
-                  v-if="project.image"
-                  :src="project.image"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 group-hover:grayscale-0"
-                />
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 backdrop-blur-sm transition-all duration-500"
+              <template v-if="project.image">
+                <a
+                  v-if="project.link"
+                  :href="project.link"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <RouterLink
-                    v-if="project.link"
-                    :to="project.link"
-                    target="_blank"
-                    class="px-6 py-2 bg-[var(--primary)] text-black text-xs font-black uppercase tracking-widest"
-                  >
-                    Explorer l'Architecture
-                  </RouterLink>
-                </div>
+                  <img
+                    :src="project.image"
+                    :alt="project.name"
+                    class="object-cover w-full h-full cursor-pointer"
+                  />
+                </a>
+                <img
+                  v-else
+                  :src="project.image"
+                  :alt="project.name"
+                  class="object-cover w-full h-full"
+                />
+              </template>
+              <div
+                v-else
+                class="flex items-center justify-center h-full w-full text-7xl opacity-20"
+              >
+                {{ project.icon }}
               </div>
             </div>
           </div>
@@ -176,136 +186,113 @@
       </div>
     </section>
 
-    <section
-      class="py-24 bg-black border-y border-[var(--border)] overflow-hidden relative"
-    >
-      <div
-        class="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none"
-      >
-        <div class="text-[30vw] font-black italic">METRICS</div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+    <!-- Statistics Section -->
+    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
           <div
             v-for="(stat, index) in statistics"
             :key="stat.id"
-            class="flex flex-col items-center text-center group"
+            class="animate-fade-in-up"
+            :style="{ animationDelay: `${index * 100}ms` }"
           >
-            <div
-              class="text-[8px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-4 opacity-70 group-hover:opacity-100 transition-opacity"
-            >
-              // {{ stat.label }}
-            </div>
-            <div
-              class="text-5xl md:text-7xl font-black italic tracking-tighter text-[var(--text-main)] group-hover:scale-110 transition-transform duration-500"
-            >
+            <div class="text-5xl font-black text-primary-500 mb-2">
               {{ stat.number }}
             </div>
-            <div
-              class="w-8 h-px bg-[var(--border)] mt-4 group-hover:w-full transition-all duration-700"
-            ></div>
+            <p class="text-secondary-600 dark:text-secondary-400 font-semibold">
+              {{ stat.label }}
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-24 bg-[var(--background)]">
+    <!-- Testimonials -->
+    <section class="py-20 bg-white dark:bg-secondary-900">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="mb-16">
+        <div class="text-center mb-16 animate-fade-in-up">
           <h2
-            class="text-[10px] font-black uppercase tracking-[0.5em] text-[var(--primary)] mb-4 italic"
+            class="text-4xl font-black text-secondary-900 dark:text-white mb-4"
           >
-            Feedbacks Clients
+            {{ $t("realisations.testimonials") }}
           </h2>
-          <p class="text-4xl md:text-6xl font-medium tracking-tighter italic">
-            Ils valident <span class="text-outline">l'architecture.</span>
-          </p>
         </div>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--border)]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
             v-for="(testimonial, idx) in testimonials"
             :key="idx"
-            class="p-10 border-r border-b border-[var(--border)] hover:bg-[var(--primary)]/[0.02] transition-colors group"
+            class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-8 border border-secondary-200 dark:border-secondary-700 hover-lift animate-fade-in-up"
+            :style="{ animationDelay: `${idx * 100}ms` }"
           >
-            <div
-              class="flex gap-1 mb-6 opacity-30 group-hover:opacity-100 transition-opacity"
-            >
-              <span
-                v-for="i in 5"
-                :key="i"
-                class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full"
-              ></span>
+            <div class="flex gap-1 mb-4">
+              <span v-for="i in 5" :key="i" class="text-primary-500">★</span>
             </div>
-
             <p
-              class="text-[var(--text-muted)] font-light leading-relaxed mb-8 text-sm md:text-base italic"
+              class="text-secondary-700 dark:text-secondary-300 leading-relaxed italic mb-6"
             >
               "{{ testimonial.text }}"
             </p>
-
-            <div class="flex items-center gap-4">
-              <div class="w-8 h-px bg-[var(--primary)]"></div>
-              <div>
-                <p
-                  class="text-xs font-black uppercase tracking-widest text-[var(--text-main)]"
-                >
-                  {{ testimonial.author }}
-                </p>
-                <p class="text-[10px] uppercase text-[var(--text-muted)]">
-                  {{ testimonial.company }}
-                </p>
-              </div>
+            <div>
+              <p class="font-bold text-secondary-900 dark:text-white">
+                {{ testimonial.author }}
+              </p>
+              <p class="text-sm text-secondary-600 dark:text-secondary-400">
+                {{ testimonial.company }}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="relative py-32 overflow-hidden">
+    <!-- Final CTA -->
+    <section
+      class="relative py-20 md:py-32 bg-primary-500 dark:bg-primary-700 text-white overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+        ></div>
+      </div>
+
       <div
-        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
-      ></div>
-
-      <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <div class="inline-block mb-6">
-          <div
-            class="px-4 py-1 border border-[var(--primary)]/30 rounded-full text-[9px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
-          >
-            Prêt pour la suite ?
-          </div>
-        </div>
-
-        <h2
-          class="text-5xl md:text-7xl font-medium tracking-tighter mb-8 leading-[0.9]"
-        >
-          Votre projet mérite une <br />
-          <span class="text-[var(--primary)] italic font-black"
-            >Ingénierie d'Élite.</span
-          >
+        class="max-w-4xl mx-auto px-4 text-center relative z-10 animate-fade-in-up"
+      >
+        <h2 class="text-5xl md:text-5xl font-black mb-6 leading-tight">
+          Votre Projet Pourrait Être le Suivant
         </h2>
-
-        <p class="text-[var(--text-muted)] mb-12 max-w-xl mx-auto font-light">
-          Ne vous contentez pas d'un site. Construisons un système robuste,
-          scalable et performant.
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Discutons de vos objectifs et construisons ensemble la solution qui
+          transformera votre entreprise.
         </p>
-
         <router-link
           to="/contact"
-          class="group relative inline-flex items-center justify-center px-12 py-5 bg-[var(--primary)] text-black font-black uppercase text-xs tracking-[0.2em] overflow-hidden transition-all"
+          class="group inline-block px-8 py-4 bg-white text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition-all hover-lift"
         >
-          <span class="relative z-10">Démarrer l'Audit</span>
-          <div
-            class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-          ></div>
+          Commencer un Projet
+          <svg
+            class="w-5 h-5 inline-block ml-2 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            ></path>
+          </svg>
         </router-link>
       </div>
     </section>
   </main>
 </template>
+
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t: $t } = useI18n();

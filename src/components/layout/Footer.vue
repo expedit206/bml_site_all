@@ -96,7 +96,7 @@ const footerLinks = [
     links: [
       { name: "Contact", href: "#" },
       { name: "Documentation", href: "#" },
-      { name: "FAQ", href: "#" },
+      { name: "FAQ", href: "/faq" },
     ],
   },
 ];

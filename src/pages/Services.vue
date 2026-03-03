@@ -1,404 +1,519 @@
 <template>
-  <main>
-    <!-- Header Section -->
-    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+  <main class="font-medium tracking-tight bg-[var(--background)]">
+    <!-- <section
+      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)]"
+    >
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
+            ></span>
+            <span
+              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
+              >Expertise Technique</span
+            >
+          </div>
+
+          <h1
+            class="text-5xl md:text-8xl font-medium tracking-tighter text-[var(--text-main)] leading-[0.95]"
+          >
+            Services <br />
+            <span class="text-[var(--primary)] text-outline">sur Mesure.</span>
+          </h1>
+
+          <p
+            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
+          >
+            Architectures scalables et solutions digitales de haute précision,
+            alignées sur vos impératifs business. De la modélisation à la mise
+            en production.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- <section
+      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
+    >
+      <div
+        class="absolute top-0 right-0 w-1/2 h-full hidden lg:block pointer-events-none overflow-hidden"
+      >
+        <div class="relative w-full h-full flex items-center justify-center">
+          <div
+            class="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[20vw] font-black leading-none uppercase text-outline opacity-[0.03] select-none italic"
+          >
+            DASH
+          </div>
+
+          <div class="relative z-10 w-full max-w-md space-y-12 pr-10">
+            <div
+              class="flex flex-col items-end animate-fade-in"
+              style="animation-delay: 200ms"
+            >
+              <span
+                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-2"
+                >System.Performance</span
+              >
+              <div
+                class="text-7xl font-black tracking-tighter text-[var(--text-main)] opacity-20 italic"
+              >
+                99.9%
+              </div>
+              <div
+                class="w-full h-px bg-gradient-to-r from-transparent via-[var(--border)] to-[var(--primary)]/30 mt-2"
+              ></div>
+            </div>
+
+            <div
+              class="flex flex-col items-end animate-fade-in"
+              style="animation-delay: 400ms"
+            >
+              <span
+                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--text-main)] mb-2"
+                >Network.Latency</span
+              >
+              <div
+                class="text-7xl font-black tracking-tighter text-[var(--primary)] opacity-40 italic"
+              >
+                12ms
+              </div>
+              <div class="flex gap-1 mt-2">
+                <div
+                  v-for="i in 5"
+                  :key="i"
+                  class="w-6 h-1 bg-[var(--primary)]/20"
+                  :class="{ 'bg-[var(--primary)]': i < 4 }"
+                ></div>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col items-end animate-fade-in"
+              style="animation-delay: 600ms"
+            >
+              <span
+                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--text-main)] mb-2"
+                >Status.Core_Engine</span
+              >
+              <div
+                class="text-4xl font-black tracking-tighter text-[var(--text-main)] opacity-20 uppercase"
+              >
+                Operational
+              </div>
+            </div>
+          </div>
+
+          <svg
+            class="absolute inset-0 w-full h-full opacity-[0.05]"
+            viewBox="0 0 400 400"
+          >
+            <rect
+              x="250"
+              y="50"
+              width="80"
+              height="100"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <rect
+              x="100"
+              y="250"
+              width="80"
+              height="60"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <path
+              d="M 180 280 L 250 100"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-dasharray="5,5"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-20">
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit bg-[var(--background)]"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
+            ></span>
+            <span
+              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
+              >Expertise Technique</span
+            >
+          </div>
+
+          <h1
+            class="text-6xl md:text-8xl font-medium tracking-tighter text-[var(--text-main)] leading-[0.95]"
+          >
+            Services <br />
+            <span class="text-[var(--primary)] text-outline">sur Mesure.</span>
+          </h1>
+
+          <p
+            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
+          >
+            Architectures scalables et solutions digitales de haute précision,
+            alignées sur vos impératifs business. De la modélisation à la mise
+            en production.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <section
+      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
+    >
+      <div class="absolute inset-0 pointer-events-none select-none">
+        <div
+          class="absolute -right-20 top-1/4 text-[40vw] lg:text-[20vw] font-black uppercase text-outline opacity-[0.03] italic leading-none"
+        >
+          DASH
+        </div>
+
+        <div
+          class="absolute inset-0 flex flex-col justify-around items-end pr-4 lg:pr-20 opacity-[0.07] lg:opacity-100"
+        >
+          <div
+            class="flex flex-col items-end transform lg:translate-y-0 -translate-y-10"
+          >
+            <div
+              class="text-8xl lg:text-7xl font-black tracking-tighter text-[var(--text-main)] italic"
+            >
+              99.9
+            </div>
+            <span
+              class="text-[8px] font-black uppercase tracking-[0.4em] text-[var(--primary)]"
+              >System.Perf</span
+            >
+          </div>
+
+          <div
+            class="flex flex-col items-end transform translate-x-10 lg:translate-x-0"
+          >
+            <div
+              class="text-8xl lg:text-7xl font-black tracking-tighter text-[var(--primary)] italic"
+            >
+              12ms
+            </div>
+            <span
+              class="text-[8px] font-black uppercase tracking-[0.4em] text-[var(--text-main)]"
+              >Net.Latency</span
+            >
+          </div>
+        </div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="space-y-6 animate-fade-in-up">
-          <div class="inline-flex items-center gap-3 px-4 py-2 bg-primary-500/20 dark:bg-primary-500/30 rounded-full w-fit border border-primary-500/30">
-            <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-            <span class="text-sm font-semibold text-primary-300">Expertise Reconnue</span>
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit bg-[var(--background)]/80 backdrop-blur-sm"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
+            ></span>
+            <span
+              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
+              >Expertise Technique</span
+            >
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
-            Services sur Mesure
+
+          <h1
+            class="text-6xl md:text-8xl font-medium tracking-tighter text-[var(--text-main)] leading-[0.95]"
+          >
+            Services <br />
+            <span class="text-[var(--primary)] text-outline">sur Mesure.</span>
           </h1>
-          <p class="text-lg text-secondary-200 max-w-2xl leading-relaxed">
-            Solutions digitales complètes alignées avec vos objectifs. De la stratégie à la livraison.
+
+          <p
+            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
+          >
+            Architectures scalables et solutions digitales de haute précision,
+            alignées sur vos impératifs business. De la modélisation à la mise
+            en production.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Main Services Grid -->
-    <section class="py-20 bg-white dark:bg-secondary-900">
+    <section class="py-24">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="space-y-12">
-          <div v-for="(service, idx) in mainServices" :key="idx" :class="{ 'flex-row-reverse': idx % 2 === 1 }" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <!-- Content -->
-            <div class="space-y-6">
-              <div class="inline-flex items-center gap-3 w-fit">
-                <div class="text-4xl">{{ service.icon }}</div>
-                <div class="h-8 w-1 bg-primary-500 rounded"></div>
+        <div class="space-y-32">
+          <div
+            v-for="(service, idx) in mainServices"
+            :key="idx"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start"
+          >
+            <div class="space-y-10">
+              <div class="flex items-center gap-4">
+                <component
+                  :is="service.iconComponent"
+                  :size="32"
+                  stroke-width="1"
+                  class="text-[var(--primary)]"
+                />
+                <span class="text-[40px] font-light opacity-10 font-mono italic"
+                  >0{{ idx + 1 }}</span
+                >
               </div>
-              
+
               <div class="space-y-4">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-secondary-900 dark:text-white">
+                <h2
+                  class="text-3xl md:text-5xl font-medium tracking-tighter text-[var(--text-main)]"
+                >
                   {{ service.title }}
                 </h2>
-                <p class="text-lg text-secondary-600 dark:text-secondary-300 leading-relaxed">
+                <p
+                  class="text-sm text-[var(--text-muted)] leading-relaxed max-w-lg"
+                >
                   {{ service.intro }}
                 </p>
               </div>
 
-              <!-- What We Deliver -->
-              <div class="space-y-3">
-                <h3 class="font-bold text-secondary-900 dark:text-white text-sm uppercase tracking-wide text-primary-600">Nous Livrons</h3>
-                <ul class="space-y-2">
-                  <li v-for="item in service.deliverables" :key="item" class="flex gap-3 items-start">
-                    <span class="text-primary-500 font-bold text-lg flex-shrink-0">✓</span>
-                    <span class="text-secondary-700 dark:text-secondary-300">{{ item }}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Technologies -->
-              <div class="space-y-3">
-                <h3 class="font-bold text-secondary-900 dark:text-white text-sm uppercase tracking-wide text-primary-600">Stack Technologique</h3>
-                <div class="flex flex-wrap gap-2">
-                  <span v-for="tech in service.technologies" :key="tech" class="px-3 py-1 bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 text-sm font-semibold rounded-full">
-                    {{ tech }}
-                  </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-4">
+                <div class="space-y-4">
+                  <h3
+                    class="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-main)]"
+                  >
+                    Livrables
+                  </h3>
+                  <ul class="space-y-2">
+                    <li
+                      v-for="item in service.deliverables"
+                      :key="item"
+                      class="text-[11px] text-[var(--text-muted)] flex items-center gap-2"
+                    >
+                      <span
+                        class="w-1 h-1 bg-[var(--primary)]/40 rounded-full"
+                      ></span>
+                      {{ item }}
+                    </li>
+                  </ul>
                 </div>
-              </div>
-
-              <!-- CTA -->
-              <button class="group mt-6 px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg transition-all hover-lift inline-flex items-center gap-2">
-                Discuter du Projet
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-              </button>
-            </div>
-
-            <!-- Visual -->
-            <div class="relative h-80 bg-gradient-to-br rounded-2xl overflow-hidden hover-lift group" :class="service.gradientClass">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-9xl opacity-20 group-hover:scale-110 transition-transform duration-300">
-                  {{ service.icon }}
-                </div>
-              </div>
-              <!-- Success Metrics Box -->
-              <div class="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-secondary-900/95 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <div class="space-y-3">
-                  <div v-for="metric in service.metrics" :key="metric.label" class="flex justify-between items-center">
-                    <span class="text-sm font-semibold text-secondary-600 dark:text-secondary-400">{{ metric.label }}</span>
-                    <span class="text-lg font-black text-primary-500">{{ metric.value }}</span>
+                <div class="space-y-4">
+                  <h3
+                    class="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-main)]"
+                  >
+                    Stack
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      v-for="tech in service.technologies"
+                      :key="tech"
+                      class="px-2 py-1 border border-[var(--border)] text-[9px] uppercase tracking-widest text-[var(--text-muted)] rounded"
+                    >
+                      {{ tech }}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Process Section -->
-    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Notre Processus
-          </h2>
-          <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-            Une approche méthodique et collaborative pour garantir votre succès
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div v-for="(step, idx) in processSteps" :key="idx" class="relative animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <!-- Connector Line -->
-            <div v-if="idx < processSteps.length - 1" class="hidden md:block absolute top-12 -right-3 w-6 h-1 bg-primary-500/30"></div>
-            
-            <div class="bg-white dark:bg-secondary-900 rounded-xl p-6 border-2 border-secondary-200 dark:border-secondary-700 hover:border-primary-500 transition-all hover-lift">
-              <div class="flex items-center justify-center w-12 h-12 bg-primary-500 text-white font-bold rounded-full mb-4 text-lg">
-                {{ idx + 1 }}
+            <div
+              class="relative p-8 border border-[var(--border)] rounded-3xl bg-[var(--primary)]/5 aspect-video flex flex-col justify-end overflow-hidden group"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none italic font-black text-9xl -translate-x-10 -translate-y-10"
+              >
+                {{ service.title.split(" ")[0] }}
               </div>
-              <h3 class="font-bold text-secondary-900 dark:text-white text-lg mb-2">{{ step.title }}</h3>
-              <p class="text-secondary-600 dark:text-secondary-400 text-sm leading-relaxed">{{ step.desc }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing / Packages -->
-    <section class="py-20 bg-white dark:bg-secondary-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Modèles d'Engagement
-          </h2>
-          <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-            Flexible. Transparent. Adapté à votre budget et timeline
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(pkg, idx) in packages" :key="idx" :class="{ 'ring-2 ring-primary-500 transform scale-105': pkg.featured }" class="bg-white dark:bg-secondary-800 rounded-2xl border border-secondary-200 dark:border-secondary-700 overflow-hidden hover-lift transition-all animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <div class="p-8 relative">
-              <div v-if="pkg.featured" class="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                POPULAIRE
-              </div>
-              <h3 class="text-2xl font-black text-secondary-900 dark:text-white mb-2">{{ pkg.name }}</h3>
-              <p class="text-secondary-600 dark:text-secondary-400 text-sm mb-6">{{ pkg.desc }}</p>
-              
-              <div class="mb-6 pb-6 border-b border-secondary-200 dark:border-secondary-700">
-                <div class="text-4xl font-black text-primary-500">
-                  À partir de<br><span class="text-base text-secondary-600 dark:text-secondary-400">{{ pkg.startPrice }}</span>
+              <div class="grid grid-cols-2 gap-4 relative z-10">
+                <div
+                  v-for="metric in service.metrics"
+                  :key="metric.label"
+                  class="p-4 border border-white/10 backdrop-blur-md rounded-xl"
+                >
+                  <p
+                    class="text-[9px] uppercase tracking-widest text-[var(--text-muted)] mb-1"
+                  >
+                    {{ metric.label }}
+                  </p>
+                  <p class="text-xl font-bold text-[var(--primary)]">
+                    {{ metric.value }}
+                  </p>
                 </div>
               </div>
-
-              <ul class="space-y-3 mb-8">
-                <li v-for="feature in pkg.features" :key="feature" class="flex gap-3 items-start text-sm text-secondary-700 dark:text-secondary-300">
-                  <span class="text-primary-500 font-bold flex-shrink-0">+</span>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-
-              <button :class="pkg.featured ? 'bg-primary-500 hover:bg-primary-600 text-white' : 'border-2 border-secondary-300 dark:border-secondary-600 text-secondary-900 dark:text-white hover:bg-secondary-50 dark:hover:bg-secondary-700'" class="w-full py-3 font-bold rounded-lg transition-all">
-                {{ pkg.featured ? 'Demander une Démo' : 'En Savoir Plus' }}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 p-8 bg-secondary-50 dark:bg-secondary-800 rounded-xl text-center">
-          <p class="text-secondary-700 dark:text-secondary-300 mb-4">Tous les projets commencent par une consultation gratuite</p>
-          <button class="text-primary-600 dark:text-primary-400 font-bold hover:text-primary-700 dark:hover:text-primary-300">
-            Planifier aujourd'hui →
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
-      <div class="max-w-3xl mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Questions Fréquentes
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-          <div v-for="(faq, idx) in faqs" :key="idx" class="bg-white dark:bg-secondary-900 rounded-xl p-6 border border-secondary-200 dark:border-secondary-700 hover:border-primary-500 transition-all animate-fade-in-up" :style="{ animationDelay: `${idx * 80}ms` }">
-            <div class="flex gap-4 cursor-pointer group" @click="faq.open = !faq.open">
-              <div class="flex-shrink-0">
-                <div class="w-6 h-6 rounded-full bg-primary-500/10 dark:bg-primary-500/20 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold text-sm group-hover:bg-primary-500 group-hover:text-white transition-all">
-                  {{ faq.open ? '−' : '+' }}
-                </div>
-              </div>
-              <div class="flex-grow">
-                <h3 class="font-bold text-secondary-900 dark:text-white group-hover:text-primary-600 transition-colors">{{ faq.q }}</h3>
-              </div>
-            </div>
-            <div v-if="faq.open" class="mt-4 ml-10 text-secondary-600 dark:text-secondary-400 leading-relaxed">
-              {{ faq.a }}
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="relative py-20 md:py-32 bg-primary-500 dark:bg-primary-700 text-white overflow-hidden">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div class="max-w-4xl mx-auto px-4 text-center relative z-10 animate-fade-in-up">
-        <h2 class="text-5xl md:text-5xl font-black mb-6 leading-tight">
-          Quel Service Vous Intéresse ?
+    <section
+      class="py-24 border-y border-[var(--border)] bg-[var(--primary)]/[0.02]"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-16 text-center italic"
+        >
+          Workflow / {{ new Date().getFullYear() }}
         </h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-          Parlons de vos enjeux digitaux et trouvons la solution idéale ensemble.
-        </p>
-        <router-link to="/contact" class="group inline-block px-8 py-4 bg-white text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition-all hover-lift">
-          Prendre Rendez-Vous
-          <svg class="w-5 h-5 inline-block ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </router-link>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div
+            v-for="(step, idx) in processSteps"
+            :key="idx"
+            class="space-y-4 relative"
+          >
+            <span class="text-4xl font-light text-[var(--primary)] opacity-20"
+              >0{{ idx + 1 }}</span
+            >
+            <h3
+              class="text-sm font-black uppercase tracking-widest text-[var(--text-main)]"
+            >
+              {{ step.title }}
+            </h3>
+            <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">
+              {{ step.desc }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[var(--border)] rounded-[40px] overflow-hidden"
+        >
+          <div
+            v-for="(pkg, idx) in packages"
+            :key="idx"
+            class="p-12 border-r last:border-r-0 border-[var(--border)] hover:bg-[var(--primary)]/5 transition-colors duration-500 group"
+          >
+            <h3
+              class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-6 italic"
+            >
+              {{ pkg.name }}
+            </h3>
+            <div class="mb-8">
+              <span
+                class="text-3xl font-medium tracking-tighter text-[var(--text-main)]"
+                >{{ pkg.startPrice }}</span
+              >
+              <p class="text-[11px] text-[var(--text-muted)] mt-2">
+                {{ pkg.desc }}
+              </p>
+            </div>
+            <ul class="space-y-4 mb-12">
+              <li
+                v-for="f in pkg.features"
+                :key="f"
+                class="text-[11px] text-[var(--text-muted)] flex items-center gap-3"
+              >
+                <Check :size="12" class="text-[var(--primary)]" /> {{ f }}
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 border border-[var(--text-main)] text-[10px] font-black uppercase tracking-widest group-hover:bg-[var(--text-main)] group-hover:text-[var(--background)] transition-all"
+            >
+              Commander
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import {
+  Globe,
+  Smartphone,
+  Cloud,
+  ShieldCheck,
+  Check,
+  ArrowRight,
+} from "lucide-vue-next";
 
 const mainServices = [
   {
-    icon: '🌐',
-    title: 'Web Development',
-    intro: 'Nous créons des applications web modernes, scalables et performantes. Du MVP au produit enterprise.',
+    iconComponent: Globe,
+    title: "Web Engineering",
+    intro:
+      "Applications haute performance avec focus sur l'architecture Merise/UML et la scalabilité Laravel/Vue.",
     deliverables: [
-      'Design UI/UX professionnel avec prototypage',
-      'Frontend responsive (React, Vue, Next.js)',
-      'Backend robuste avec microservices',
-      'Database architecture optimisée',
-      'Déploiement et monitoring en production',
-      'Documentation et formation d\'équipe'
+      "Audit Architecture",
+      "Frontend (Vue/Inertia)",
+      "API RESTful",
     ],
-    technologies: ['React', 'Vue.js', 'Next.js', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'AWS'],
+    technologies: ["Laravel", "Inertia.js", "Vue.js", "Tailwind"],
     metrics: [
-      { label: 'Temps de Réponse', value: '< 100ms' },
-      { label: 'Uptime', value: '99.9%' },
-      { label: 'Performance', value: 'A+' },
-      { label: 'SEO Score', value: '95+' }
+      { label: "Core Web Vitals", value: "99/100" },
+      { label: "SEO Score", value: "A+" },
     ],
-    gradientClass: 'from-blue-500/30 to-cyan-500/30'
   },
   {
-    icon: '📱',
-    title: 'Mobile App Development',
-    intro: 'Applications mobiles natives et cross-platform qui engage vos utilisateurs et génère du revenue.',
-    deliverables: [
-      'iOS et Android natifs (Swift, Kotlin)',
-      'Cross-platform (React Native, Flutter)',
-      'Design mobile-first intuitive',
-      'Intégration API et backend',
-      'Push notifications et offline mode',
-      'AppStore et Google Play deployment'
-    ],
-    technologies: ['Swift', 'Kotlin', 'React Native', 'Flutter', 'Firebase', 'Realm'],
+    iconComponent: Smartphone,
+    title: "Mobile Solutions",
+    intro:
+      "Développement cross-platform optimisé pour l'engagement utilisateur et la fluidité native.",
+    deliverables: ["UI Mobile-First", "iOS & Android", "Offline Sync"],
+    technologies: ["Flutter", "React Native", "Firebase"],
     metrics: [
-      { label: 'App Store Rating', value: '4.8★' },
-      { label: 'User Retention', value: '+60%' },
-      { label: 'Crash Rate', value: '< 0.1%' },
-      { label: 'Install Size', value: '< 50MB' }
+      { label: "Crash Rate", value: "< 0.01%" },
+      { label: "Performance", value: "60 FPS" },
     ],
-    gradientClass: 'from-purple-500/30 to-pink-500/30'
   },
   {
-    icon: '☁️',
-    title: 'Cloud & DevOps',
-    intro: 'Infrastructure moderne, sécurisée et scalable. Zero-downtime deployments et disaster recovery.',
-    deliverables: [
-      'Architecture cloud-native design',
-      'CI/CD pipelines automatisés',
-      'Containerisation (Docker, Kubernetes)',
-      'Infrastructure as Code',
-      'Monitoring et logging 24/7',
-      'Security hardening et compliance'
-    ],
-    technologies: ['AWS', 'GCP', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'ELK'],
+    iconComponent: Cloud,
+    title: "DevOps & Cloud",
+    intro:
+      "Automatisation et déploiement continu. Infrastructure as Code pour une fiabilité totale.",
+    deliverables: ["CI/CD Pipelines", "Dockerization", "Cloud Security"],
+    technologies: ["Docker", "AWS", "Terraform", "GitHub Actions"],
     metrics: [
-      { label: 'Déploiements/jour', value: '50+' },
-      { label: 'Cost Optimization', value: '-40%' },
-      { label: 'Deployment Time', value: '< 5min' },
-      { label: 'Incident Response', value: '< 15min' }
+      { label: "Uptime", value: "99.99%" },
+      { label: "Deploy Time", value: "5 min" },
     ],
-    gradientClass: 'from-orange-500/30 to-red-500/30'
   },
-  {
-    icon: '🔒',
-    title: 'Backend & Security',
-    intro: 'Architectures backend performantes avec sécurité enterprise grade et conformité complète.',
-    deliverables: [
-      'API REST et GraphQL scalable',
-      'Microservices architecture',
-      'Authentication & Authorization (OAuth2, JWT)',
-      'Data encryption et secure storage',
-      'Penetration testing',
-      'GDPR, CCPA, ISO 27001 compliance'
-    ],
-    technologies: ['Node.js', 'Python', 'Java', 'Go', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Elasticsearch'],
-    metrics: [
-      { label: 'API Latency', value: '< 50ms' },
-      { label: 'Security Score', value: 'A+' },
-      { label: 'Data Loss Risk', value: '0%' },
-      { label: 'Uptime SLA', value: '99.99%' }
-    ],
-    gradientClass: 'from-green-500/30 to-emerald-500/30'
-  }
-]
+];
 
 const processSteps = [
-  { title: 'Discovery', desc: 'Audit complet de votre situation, analyse des besoins, définition des KPIs et roadmap.' },
-  { title: 'Design', desc: 'Wireframes, prototypes interactifs, design system. Validation avec stakeholders.' },
-  { title: 'Development', desc: 'Sprints agiles bi-hebdomadaires. Code reviews. Tests automatisés. Documentation.' },
-  { title: 'Launch & Support', desc: 'Déploiement production. Monitoring. Support technique. Optimisations continues.' }
-]
+  {
+    title: "Modélisation",
+    desc: "UML, Merise et schématisation de la base de données avant toute ligne de code.",
+  },
+  {
+    title: "Design System",
+    desc: "Création d'une identité visuelle cohérente et minimaliste.",
+  },
+  {
+    title: "Sprints",
+    desc: "Développement agile avec revues de code hebdomadaires.",
+  },
+  {
+    title: "Staging",
+    desc: "Tests rigoureux en environnement de pré-production.",
+  },
+];
 
 const packages = [
   {
-    name: 'Starter',
-    desc: 'Pour les petits projets et MVP',
-    startPrice: '5,000 €',
-    featured: false,
-    features: [
-      'Projet simple (1-2 mois)',
-      'Une page de landing ou app MVP',
-      'Design professionnel',
-      'Responsive mobile',
-      '3 mois de support',
-      'Herbergement inclus'
-    ]
+    name: "Starter",
+    startPrice: "5.000 €",
+    desc: "Pour MVP et prototypes",
+    features: ["1-2 mois de dev", "UI Standard", "3 mois support"],
   },
   {
-    name: 'Professional',
-    desc: 'Pour les entreprises en croissance',
-    startPrice: '15,000 €',
-    featured: true,
-    features: [
-      'Projet complet (3-6 mois)',
-      'App web ou mobile full-stack',
-      'Design system personnalisé',
-      'API backend robuste',
-      '1 an de support & maintenance',
-      'Analytics et monitoring',
-      'Formation équipe interne'
-    ]
+    name: "Pro",
+    startPrice: "15.000 €",
+    desc: "Pour entreprises en croissance",
+    features: ["3-6 mois de dev", "Architecture Custom", "1 an support"],
   },
   {
-    name: 'Enterprise',
-    desc: 'Solutions custom complexes',
-    startPrice: '50,000 €',
-    featured: false,
-    features: [
-      'Projet complexe (6+ mois)',
-      'Microservices et scaling',
-      'Infrastructure cloud haute disponibilité',
-      'Security & compliance experts',
-      'Support 24/7 dédié',
-      'Retro-engineering et audit',
-      'Team augmentation possible'
-    ]
-  }
-]
-
-const faqs = ref([
-  {
-    q: 'Quel est le délai minimum pour un projet ?',
-    a: 'Un MVP simple peut être livré en 4-6 semaines. Un projet plus complet (6-12 mois). Lors de notre consultation initiale, nous établissons une timeline réaliste basée sur la complexité et vos ressources.',
-    open: false
+    name: "Enterprise",
+    startPrice: "50.000 €",
+    desc: "Solutions complexes",
+    features: ["6+ mois de dev", "Microservices", "Support 24/7"],
   },
-  {
-    q: 'Parlez-vous avec les clients régulièrement pendant le développement ?',
-    a: 'Absolument. Nous utilisons une méthodologie agile avec sprints bi-hebdomadaires. Vous recevez les updates, pouvez tester les features, et nous nous adaptons selon votre feedback.',
-    open: false
-  },
-  {
-    q: 'Que se passe-t-il après le lancement ?',
-    a: 'Nous ne disparaissons pas. Tous nos packages incluent du support post-launch pour bugs, optimisations, et nouvelles features. Nous offrons maintenance 24/7 et scaling selon votre croissance.',
-    open: false
-  },
-  {
-    q: 'À combien revient un développeur de mon côté ?',
-    a: 'Vous pouvez augmenter notre équipe avec un développeur dédié (senior backend, frontend, mobile). À partir de 4,500€/mois. Cela donne à votre équipe accès direct à notre expertise et scaled resources.',
-    open: false
-  },
-  {
-    q: 'Offrez-vous une garantie de satisfait ou remboursé ?',
-    a: 'Prenez 2 semaines après livraison en production pour tester complètement. Si insatisfait pour raison directement liée à nos délais, nous corrigeons gratuitement. Nous croyons en la qualité.',
-    open: false
-  }
-])
+];
 </script>
