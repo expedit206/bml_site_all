@@ -80,7 +80,7 @@ const footerLinks = [
     links: [
       { name: "Services", href: "/services" },
       { name: "Réalisations", href: "/realisations" },
-      { name: "Solutions", href: "/solutions" },
+      // { name: "Solutions", href: "/solutions" },
     ],
   },
   {

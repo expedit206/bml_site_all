@@ -160,14 +160,19 @@
                 <div
                   class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 backdrop-blur-sm transition-all duration-500"
                 >
-                  <RouterLink
-                    v-if="project.link"
-                    :to="project.link"
-                    target="_blank"
-                    class="px-6 py-2 bg-[var(--primary)] text-black text-xs font-black uppercase tracking-widest"
+                  <a
+                     v-if="project.link"
+                     :href="project.link"
+                     target="_blank"
+                     class="px-6 py-2 bg-[var(--primary)] text-black text-xs font-black uppercase tracking-widest"
+                   
                   >
                     Explorer l'Architecture
-                  </RouterLink>
+                  </a
+                     v-if="project.link"
+                     :href="project.link"
+                     target="_blank"
+                     class="px-6 py-2 bg-[var(--primary)] text-black text-xs font-black uppercase tracking-widest">
                 </div>
               </div>
             </div>
