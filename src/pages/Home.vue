@@ -1,81 +1,79 @@
 <template>
-  <main>
-        <div class="w-full h-10 bg-white dark:bg-black text-center text-lg text-secondary-900 dark:text-white flex items-center justify-center mb-4">
-          Test Dark Mode: Ce bloc doit être noir en mode sombre
-        </div>
-    <!-- Hero Section - Premium -->
-    <section class="relative bg-white dark:bg-secondary-900 py-20 md:py-32 overflow-hidden">
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
-      </div>
+  <main class="bg-[var(--background)] text-[var(--text-main)]">
+    <section class="relative py-20 md:py-32">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div class="space-y-8 animate-fade-in">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 bg-[var(--primary)]/10 rounded-full border border-[var(--primary)]/20"
+          >
+            <span
+              class="w-2 h-2 bg-[var(--primary)] rounded-full animate-ping"
+            ></span>
+            <span
+              class="text-sm font-black text-[var(--primary)] uppercase tracking-widest"
+              >Agence Digitale Innovante</span
+            >
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-black leading-tight tracking-tighter"
+          >
+            Transformez Votre Vision
+            <span class="text-[var(--primary)]">en Réalité Digitale</span>
+          </h1>
+          <p class="text-lg text-[var(--text-muted)] max-w-lg">
+            BodyMac Labs accompagne les entreprises ambitieuses à transformer
+            leurs défis numériques en opportunités. Stratégie. Technologie.
+            Résultats.
+          </p>
 
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <!-- Left Content -->
-          <div class="space-y-8 animate-slide-in-left">
-            <div class="inline-flex items-center gap-3 px-4 py-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-full w-fit">
-              <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-              <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">Agence Digitale Innovante</span>
-            </div>
-
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-secondary-900 dark:text-white">
-              Transformez Votre Vision
-              <span class="block text-transparent bg-clip-text bg-primary-500">en Réalité Digitale</span>
-            </h1>
-
-            <p class="text-lg text-secondary-600 dark:text-secondary-300 leading-relaxed max-w-lg">
-              BodyMac Labs accompagne les entreprises ambitieuses à transformer leurs défis numériques en opportunités de croissance. Stratégie. Technologie. Résultats.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 pt-4">
-              <button class="group px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg transition-all duration-300 hover-lift flex items-center gap-2">
-                Commencer un Projet
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-              </button>
-              <button class="px-8 py-4 border-2 border-secondary-300 dark:border-secondary-700 text-secondary-900 dark:text-white hover:bg-secondary-50 dark:hover:bg-secondary-800 font-bold rounded-lg transition-all duration-300">
-                Nos Cas d'Usage
-              </button>
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-secondary-200 dark:border-secondary-800">
-              <div class="animate-fade-in-up">
-                <div class="text-2xl md:text-3xl font-black text-primary-500">50+</div>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">Projets Livrés</p>
+          <div
+            class="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border)]"
+          >
+            <div v-for="s in stats" :key="s.label">
+              <div class="text-3xl font-black text-[var(--primary)]">
+                {{ s.current }}{{ s.suffix }}
               </div>
-              <div class="animate-fade-in-up" style="animation-delay: 100ms;">
-                <div class="text-2xl md:text-3xl font-black text-primary-500">30+</div>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">Clients Heureux</p>
-              </div>
-              <div class="animate-fade-in-up" style="animation-delay: 200ms;">
-                <div class="text-2xl md:text-3xl font-black text-primary-500">10ans</div>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">D'Expertise</p>
-              </div>
+              <p
+                class="text-[10px] uppercase font-bold text-[var(--text-muted)] tracking-widest"
+              >
+                {{ s.label }}
+              </p>
             </div>
           </div>
 
-          <!-- Right Visual -->
-          <div class="hidden lg:block animate-slide-in-right">
-            <div class="relative">
-              <!-- Floating cards -->
-              <div class="absolute top-0 right-0 w-80 h-64 bg-gradient-to-br from-primary-500/20 to-transparent rounded-2xl border border-primary-500/30 backdrop-blur-sm p-6 transform hover-lift">
-                <div class="text-4xl mb-3">🎯</div>
-                <h3 class="font-bold text-secondary-900 dark:text-white mb-2">Stratégie</h3>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">Nous définissons la direction</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button
+              class="px-8 py-4 bg-[var(--primary)] text-white font-black rounded-xl hover:-translate-y-1 transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
+            >
+              Commencer un Projet <ArrowRight :size="20" />
+            </button>
+            <button
+              class="px-8 py-4 border-2 border-[var(--border)] font-bold rounded-xl hover:bg-[var(--surface)] transition-all"
+            >
+              Nos Cas d'Usage
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden lg:grid grid-cols-1 gap-4">
+          <div
+            v-for="(feat, i) in ['Stratégie', 'Technologie', 'Résultats']"
+            :key="i"
+            class="p-8 bg-[var(--surface)] border border-[var(--border)] rounded-2xl hover:border-[var(--primary)] transition-all group"
+          >
+            <div class="flex items-center gap-6">
+              <div
+                class="p-4 bg-[var(--primary)]/10 rounded-xl text-[var(--primary)]"
+              >
+                <!-- <component :is="i === 0 ? Target : i === 1 ? Zap : BarChart3" /> -->
               </div>
-              <div class="absolute top-48 -left-12 w-80 h-64 bg-gradient-to-br from-secondary-500/20 to-transparent rounded-2xl border border-secondary-500/30 backdrop-blur-sm p-6 transform hover-lift" style="animation-delay: 200ms;">
-                <div class="text-4xl mb-3">⚡</div>
-                <h3 class="font-bold text-secondary-900 dark:text-white mb-2">Technologie</h3>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">Nous construisons la solution</p>
-              </div>
-              <div class="absolute -bottom-8 right-12 w-80 h-64 bg-gradient-to-br from-primary-500/20 to-transparent rounded-2xl border border-primary-500/30 backdrop-blur-sm p-6 transform hover-lift" style="animation-delay: 400ms;">
-                <div class="text-4xl mb-3">📊</div>
-                <h3 class="font-bold text-secondary-900 dark:text-white mb-2">Résultats</h3>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400">Nous mesurons l'impact</p>
+              <div>
+                <h3 class="text-xl font-bold">{{ feat }}</h3>
+                <p class="text-sm text-[var(--text-muted)]">
+                  Expertise Certifiée BodyMac
+                </p>
               </div>
             </div>
           </div>
@@ -83,147 +81,202 @@
       </div>
     </section>
 
-    <!-- Services Overview - Compact -->
-    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl md:text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Notre Expertise
-          </h2>
-          <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-            Des solutions end-to-end pour tous vos enjeux digitaux
-          </p>
-        </div>
+    <section
+      ref="statsSection"
+      class="py-16 border-y border-[var(--border)] bg-transparent"
+    >
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-3 divide-x divide-[var(--border)]">
+          <div
+            v-for="s in stats"
+            :key="s.label"
+            class="flex flex-col items-center justify-center px-4"
+          >
+            <div
+              class="text-3xl md:text-5xl font-medium text-[var(--text-main)] mb-1 tracking-tight"
+            >
+              {{ s.current
+              }}<span class="text-[var(--primary)] ml-0.5">{{ s.suffix }}</span>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(service, index) in topServices" :key="index" class="group animated-fade-in-up" :style="{ animationDelay: `${index * 100}ms` }">
-            <div class="bg-white dark:bg-secondary-900 rounded-xl p-8 border border-secondary-200 dark:border-secondary-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 hover-lift h-full">
-              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{{ service.icon }}</div>
-              <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-3">{{ service.title }}</h3>
-              <p class="text-secondary-600 dark:text-secondary-400 mb-6">{{ service.desc }}</p>
-              <a href="#" class="text-primary-500 font-semibold hover:text-primary-600 inline-flex items-center gap-2">
-                En savoir plus →
+            <p
+              class="text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)] font-semibold"
+            >
+              {{ s.label }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-4 bg-transparent">
+      <div class="max-w-7xl mx-auto px-4 mb-20">
+        <div
+          class="inline-block px-3 py-1 border border-[var(--primary)]/30 rounded-full mb-2"
+        >
+          <span
+            class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
+            >Expertise</span
+          >
+        </div>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight">
+          Des solutions end-to-end pour <br />
+          vos enjeux digitaux.
+        </h2>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12"
+      >
+        <div
+          v-for="service in topServices"
+          :key="service.title"
+          class="relative group pt-8 border-t border-[var(--border)] hover:border-[var(--primary)] transition-all duration-500"
+        >
+          <div
+            class="mb-6 text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors"
+          >
+            <component :is="service.icon" :size="32" stroke-width="1.5" />
+          </div>
+
+          <h3 class="text-xl font-semibold mb-3 tracking-tight">
+            {{ service.title }}
+          </h3>
+
+          <p
+            class="text-[var(--text-muted)] mb-6 text-sm leading-relaxed max-w-xs"
+          >
+            {{ service.desc }}
+          </p>
+
+          <a
+            href="#"
+            class="text-[10px] uppercase font-bold tracking-[0.2em] text-[var(--text-main)] flex items-center gap-2 group-hover:text-[var(--primary)] transition-colors"
+          >
+            Découvrir
+            <ChevronRight
+              :size="12"
+              class="group-hover:translate-x-1 transition-transform"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 pb-0 font-medium tracking-tight">
+      <div class="max-w-7xl mx-auto px-4 mb-16">
+        <h2 class="text-4xl font-medium tracking-tight">Nos Derniers Succès</h2>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+      >
+        <div
+          v-for="p in featuredProjects"
+          :key="p.name"
+          class="group relative bg-[var(--surface)] rounded-[32px] overflow-hidden border border-[var(--border)] hover:border-[var(--primary)] transition-all duration-500"
+        >
+          <div class="h-64 overflow-hidden relative">
+            <img
+              :src="p.image"
+              :alt="p.name"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+            >
+              <a
+                v-if="p.link"
+                :href="p.link"
+                target="_blank"
+                class="px-6 py-3 bg-white text-black font-black rounded-full flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform"
+              >
+                Visiter le site <ExternalLink :size="16" />
               </a>
             </div>
           </div>
-        </div>
 
-        <div class="text-center mt-12">
-          <router-link to="/services" class="inline-block px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg transition-all hover-lift">
-            Voir Tous les Services →
-          </router-link>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-white dark:bg-secondary-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="space-y-8 animate-slide-in-left">
-            <h2 class="text-4xl font-black text-secondary-900 dark:text-white leading-tight">
-              Pourquoi les Meilleurs Choisissent BodyMac Labs
-            </h2>
-            <div class="space-y-4">
-              <div v-for="(benefit, idx) in benefits" :key="idx" class="flex gap-4 animate-fade-in-up" :style="{ animationDelay: `${idx * 80}ms` }">
-                <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-primary-500 text-white font-bold">✓</div>
-                </div>
-                <div>
-                  <h3 class="font-bold text-secondary-900 dark:text-white">{{ benefit.title }}</h3>
-                  <p class="text-secondary-600 dark:text-secondary-400 text-sm">{{ benefit.desc }}</p>
-                </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="text-2xl font-black">{{ p.name }}</h3>
+                <p
+                  v-if="p.link"
+                  class="text-[var(--primary)] text-xs font-bold font-mono tracking-tighter opacity-80 mt-1"
+                >
+                  {{ p.link.replace("https://", "").replace("www.", "") }}
+                </p>
               </div>
             </div>
-          </div>
-          <div class="relative animate-slide-in-right">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-transparent rounded-2xl blur-2xl"></div>
-            <div class="relative bg-white dark:bg-secondary-800 rounded-2xl p-12 border border-secondary-100 dark:border-secondary-700">
-              <div class="space-y-8">
-                <div class="text-center">
-                  <div class="text-6xl font-black text-primary-500 mb-2">95%</div>
-                  <p class="text-secondary-600 dark:text-secondary-400">De Satisfaction Client</p>
-                </div>
-                <hr class="border-secondary-200 dark:border-secondary-700">
-                <div class="text-center">
-                  <div class="text-6xl font-black text-primary-500 mb-2">2.5x</div>
-                  <p class="text-secondary-600 dark:text-secondary-400">ROI Moyen</p>
-                </div>
-              </div>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6">
+              {{ p.result }}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="t in p.tech"
+                :key="t"
+                class="px-3 py-1 bg-[var(--background)] border border-[var(--border)] text-[10px] font-black rounded-full uppercase"
+                >{{ t }}</span
+              >
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Recent Projects Teaser -->
-    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl md:text-4xl font-black text-secondary-900 dark:text-white mb-4">
-            Nos Derniers Succès
+    <section class="max-w-7xl mx-auto px-4 py-2 font-medium tracking-tight">
+      <div
+        class="relative py-20 border-t border-[var(--border)] overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[var(--primary)]/5 to-transparent pointer-events-none"
+        ></div>
+
+        <div class="relative z-10 space-y-10">
+          <div class="flex justify-start">
+            <span
+              class="px-4 py-1.5 border border-[var(--primary)]/20 rounded-full text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)]"
+            >
+              Contact & Collaboration
+            </span>
+          </div>
+
+          <h2
+            class="text-4xl md:text-7xl font-medium tracking-tighter text-[var(--text-main)] max-w-4xl leading-[1.05]"
+          >
+            Prêt à transformer votre vision <br />
+            <span class="text-[var(--primary)]">en produit d'exception ?</span>
           </h2>
-          <p class="text-lg text-secondary-600 dark:text-secondary-400">Découvrez comment nous avons transformé des idées en produits remarquables</p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div v-for="(project, idx) in featuredProjects" :key="idx" class="group animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <a v-if="project.link" :href="project.link" target="_blank" rel="noopener" class="block">
-              <div class="relative h-64 bg-gradient-to-br from-primary-500 to-secondary-600 dark:from-primary-700 dark:to-secondary-900 rounded-2xl overflow-hidden mb-6 hover-lift">
-                <img v-if="project.image" :src="project.image" alt="Image du projet" class="absolute inset-0 w-full h-full object-cover" />
-                <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
-                  {{ project.category }}
-                </div>
+          <p
+            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
+          >
+            Rejoignez nos 30+ partenaires. <br />
+            Discutons de vos ambitions technologiques dès aujourd'hui.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-10 items-center pt-6">
+            <button
+              class="group flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[var(--text-main)] hover:text-[var(--primary)] transition-colors"
+            >
+              Planifier un appel
+              <div
+                class="w-10 h-10 rounded-full border border-[var(--border)] group-hover:border-[var(--primary)] flex items-center justify-center transition-all"
+              >
+                <ArrowRight
+                  :size="16"
+                  class="group-hover:translate-x-1 transition-transform"
+                />
               </div>
-            </a>
-            <div v-else class="relative h-64 bg-gradient-to-br from-primary-500 to-secondary-600 dark:from-primary-700 dark:to-secondary-900 rounded-2xl overflow-hidden mb-6 hover-lift">
-              <img v-if="project.image" :src="project.image" alt="Image du projet" class="absolute inset-0 w-full h-full object-cover" />
-              <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
-                {{ project.category }}
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-2">{{ project.name }}</h3>
-            <p class="text-secondary-600 dark:text-secondary-400 mb-4">{{ project.result }}</p>
-            <div class="flex gap-2">
-              <span v-for="tech in project.tech" :key="tech" class="px-2 py-1 bg-primary-500/10 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 text-xs font-semibold rounded">
-                {{ tech }}
-              </span>
-            </div>
+            </button>
+
+            <div class="hidden sm:block w-[1px] h-8 bg-[var(--border)]"></div>
+
+            <button
+              class="text-sm font-black uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"
+            >
+              Nous écrire
+            </button>
           </div>
-        </div>
-
-        <div class="text-center">
-          <router-link to="/realisations" class="inline-block px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg transition-all hover-lift">
-            Voir Tous les Projets →
-          </router-link>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section - Powerful -->
-    <section class="relative py-20 md:py-32 bg-primary-500 dark:bg-primary-700 text-white overflow-hidden">
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div class="max-w-4xl mx-auto px-4 text-center relative z-10 animate-fade-in-up">
-        <h2 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-          Prêt à Lancer Votre Projet ?
-        </h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Rejoignez nos 30+ clients qui ont transformé leur vision en solutions digitales performantes. Discutons de vos ambitions dès aujourd'hui.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="group px-8 py-4 bg-white text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition-all hover-lift flex items-center justify-center gap-2">
-            Planifier une Consultation
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </button>
-          <router-link to="/contact" class="px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-all">
-            Nous Contacter
-          </router-link>
         </div>
       </div>
     </section>
@@ -231,75 +284,140 @@
 </template>
 
 <script setup lang="ts">
-const topServices = [
-  {
-    icon: '🌐',
-    title: 'Web Modernisation',
-    desc: 'Transformez vos sites legacy en applications web ultra-performantes avec technologies latest-gen'
-  },
-  {
-    icon: '📱',
-    title: 'Apps Mobiles Premier',
-    desc: 'Développement iOS/Android natives pour maximum de performance et user experience'
-  },
-  {
-    icon: '☁️',
-    title: 'Cloud & Scalabilité',
-    desc: 'Architecture cloud-native pour croissance sans limites et zéro downtime'
-  }
-]
+import { ref, onMounted } from "vue";
+import {
+  ExternalLink,
+  Globe,
+  Smartphone,
+  Cloud,
+  ArrowRight,
+} from "lucide-vue-next";
+import confetti from "canvas-confetti";
 
-const benefits = [
-  { title: 'Équipe Senior', desc: 'Nos experts ont 10+ ans d\'expérience moyenne. Zero junior developers.' },
-  { title: '100% Custom', desc: 'Pas de template. Chaque pixel est pensé pour vos objectifs.' },
-  { title: 'De la Stratégie', desc: 'On ne code pas sans plan. Étude, roadmap, validation d\'hypothèses.' },
-  { title: 'Support Illimité', desc: 'Post-launch, on reste. Support, optimisations, évolutions continues.' },
-  { title: 'Qualité Garantie', desc: 'Tests automatisés, code review, monitoring 24/7 en production.' },
-  { title: 'Délais Respectés', desc: 'Méthodologie agile. Transparence totale. Zéro dérive budgétaire.' }
-]
+const statsSection = ref(null);
+const hasAnimated = ref(false);
+
+const stats = ref([
+  { label: "Projets Livrés", value: 50, current: 0, suffix: "+" },
+  { label: "Clients Heureux", value: 30, current: 0, suffix: "+" },
+  { label: "D'Expertise", value: 10, current: 0, suffix: "ans" },
+]);
 
 const featuredProjects = [
   {
-    image: '/img/acadecol.png',
-    name: 'Acadecol',
-    category: 'Plateforme éducative',
-    result: 'Solution digitale pour la gestion scolaire, adoption nationale, impact sur 100+ établissements.',
-    tech: ['Laravel', 'Vue.js', 'MySQL'],
-    impact: '100+ écoles'
+    image: "/img/acadecol.png",
+    name: "Acadecol",
+    result: "Solution digitale pour la gestion scolaire, adoption nationale.",
+    tech: ["Laravel", "Vue.js"],
+    link: "https://acadecol.com",
   },
   {
-    image: '/img/Boris-Tech.png',
-    name: 'Boristech',
-    category: 'Tech & Innovation',
-    result: 'Développement d\'outils sur-mesure pour PME, automatisation des processus, gain de productivité.',
-    tech: ['React', 'Node.js', 'PostgreSQL'],
-    impact: 'Productivité x2'
+    image: "/img/Boris-Tech.png",
+    name: "Boris Tech",
+    result: "Automatisation des processus PME et services informatiques.",
+    tech: ["React", "Node.js"],
+    link: "https://boristech.cm",
   },
   {
-    image: '/img/Stella-Wabo.png',
-    name: 'Stella Wabo',
-    category: 'Branding & Web',
-    result: 'Création d\'une identité visuelle forte et site web performant pour une artiste reconnue.',
-    tech: ['WordPress', 'Figma', 'SEO'],
-    impact: 'Visibilité accrue'
+    image: "/img/Stella-Wabo.png",
+    name: "Stella Wabo",
+    result: "Identité visuelle et portfolio haut de gamme.",
+    tech: ["WordPress", "SEO"],
+    link: "https://stellawabo.com",
   },
   {
-    image: '/img/abec.png',
-    name: 'ABEC',
-    category: 'Plateforme sociale',
-    result: 'Plateforme de bien-être universel, accès direct à universalwelfare.org, impact international.',
-    tech: ['Laravel', 'Vue.js', 'MySQL'],
-    impact: 'Portée mondiale',
-    link: 'https://universalwelfare.org/'
+    image: "/img/abec.png",
+    name: "ABEC",
+    result: "Plateforme de bien-être universel et impact international.",
+    tech: ["Laravel", "MySQL"],
+    link: "https://universalwelfare.org/",
   },
   {
-    image: '/img/studenapp.png',
-    name: 'StudentApp',
-    category: 'Mobile & Web',
-    result: "Plateforme pour 50k+ étudiants. Réduction du taux d'absentéisme de 40%.",
-    tech: ['React Native', 'Node.js', 'PostgreSQL'],
-    impact: '+50k utilisateurs',
-    link: 'https://studentapp.espacecameroun.com/'
-  }
-]
+    image: "/img/studenapp.png",
+    name: "StudentApp",
+    result: "Gestion académique pour 50k+ étudiants.",
+    tech: ["Inertia.js", "Tailwind"],
+    link: "https://studentapp.espacecameroun.com/",
+  },
+];
+
+const triggerConfetti = () => {
+  const duration = 3 * 1000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 3,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: ["#0A1B9E", "#FFE600", "#F39200"], // Tes couleurs de marque
+    });
+    confetti({
+      particleCount: 3,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: ["#0A1B9E", "#FFE600", "#F39200"],
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+};
+
+const animateNumbers = () => {
+  stats.value.forEach((s, index) => {
+    let start = 0;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    const update = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      s.current = Math.floor(progress * s.value);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else if (index === stats.value.length - 1) {
+        // Déclenche l'explosion de joie quand le DERNIER chiffre finit
+        triggerConfetti();
+      }
+    };
+    requestAnimationFrame(update);
+  });
+};
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting && !hasAnimated.value) {
+        animateNumbers();
+        hasAnimated.value = true;
+      }
+    },
+    { threshold: 0.6 },
+  );
+
+  if (statsSection.value) observer.observe(statsSection.value);
+});
+
+// 2. Contenu Intégral - Services
+const topServices = [
+  {
+    icon: Globe,
+    title: "Web Modernisation",
+    desc: "Transformez vos sites legacy en applications web ultra-performantes avec technologies latest-gen",
+  },
+  {
+    icon: Smartphone,
+    title: "Apps Mobiles Premier",
+    desc: "Développement iOS/Android natives pour maximum de performance et user experience",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Scalabilité",
+    desc: "Architecture cloud-native pour croissance sans limites et zéro downtime",
+  },
+];
 </script>
