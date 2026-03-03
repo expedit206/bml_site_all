@@ -83,14 +83,14 @@ const footerLinks = [
       // { name: "Solutions", href: "/solutions" },
     ],
   },
-  {
-    title: "Entreprise",
-    links: [
-      { name: "À propos", href: "#" },
-      { name: "Carrières", href: "#" },
-      { name: "Mentions légales", href: "#" },
-    ],
-  },
+  // {
+  //   title: "Entreprise",
+  //   links: [
+  //     { name: "À propos", href: "#" },
+  //     { name: "Carrières", href: "#" },
+  //     { name: "Mentions légales", href: "#" },
+  //   ],
+  // },
   {
     title: "Support",
     links: [

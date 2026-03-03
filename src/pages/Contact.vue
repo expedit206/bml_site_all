@@ -1,377 +1,564 @@
 <template>
-  <main>
-    <!-- Header Section -->
-    <section class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden">
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="space-y-6 animate-fade-in-up">
-          <div class="inline-flex items-center gap-3 px-4 py-2 bg-primary-500/20 dark:bg-primary-500/30 rounded-full w-fit border border-primary-500/30">
-            <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-            <span class="text-sm font-semibold text-primary-300">Parlez Avec Nous</span>
-          </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
-            Parlons de Votre Projet
-          </h1>
-          <p class="text-lg text-secondary-200 max-w-2xl leading-relaxed">
-            Consultation gratuite. Aucun engagement. Juste une conversation pour explorer comment on peut vous aider.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-20 bg-white dark:bg-secondary-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <!-- Contact Info Sidebar -->
-          <div class="lg:col-span-1 animate-slide-in-left">
-            <div class="sticky top-20 space-y-8">
-              <!-- Quick Contact -->
-              <div class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-6 border border-secondary-200 dark:border-secondary-700">
-                <h3 class="font-black text-lg text-secondary-900 dark:text-white mb-4">Contact Rapide</h3>
-                <div class="space-y-4">
-                  <a href="tel:640472357" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
-                    <div class="w-10 h-10 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all">
-                      ☎️
-                    </div>
-                    <div>
-                      <p class="text-xs text-secondary-600 dark:text-secondary-400">Téléphone</p>
-                      <p class="font-bold text-secondary-900 dark:text-white">640472357 / 696428651</p>
-                    </div>
-                  </a>
-                  <a href="mailto:bodymaclabs@gmail.com" class="flex gap-3 items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors group">
-                    <div class="w-10 h-10 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all">
-                      📧
-                    </div>
-                    <div>
-                      <p class="text-xs text-secondary-600 dark:text-secondary-400">Email (24h)</p>
-                      <p class="font-bold text-secondary-900 dark:text-white">bodymaclabs@gmail.com</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Response Time -->
-              <div class="bg-primary-500/10 dark:bg-primary-500/20 border border-primary-500/30 rounded-xl p-6">
-                <h3 class="font-bold text-primary-700 dark:text-primary-400 mb-2">⚡ Temps de Réponse</h3>
-                <p class="text-secondary-700 dark:text-secondary-300 text-sm">
-                  Nous répondons à tous les messages dans les 24h ouvrables. Pour urgent, appelez directement.
-                </p>
-              </div>
-
-              <!-- Office Hours -->
-              <div class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-6 border border-secondary-200 dark:border-secondary-700">
-                <h3 class="font-bold text-secondary-900 dark:text-white mb-4">🕐 Horaires</h3>
-                <div class="space-y-2 text-sm text-secondary-600 dark:text-secondary-400">
-                  <p><span class="font-semibold">Lun - Ven:</span> 9h - 18h</p>
-                  <p><span class="font-semibold">Samedi:</span> 10h - 14h</p>
-                  <p><span class="font-semibold">Dimanche:</span> Fermé</p>
-                </div>
-              </div>
-
-              <!-- Office Location -->
-              <div class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-6 border border-secondary-200 dark:border-secondary-700">
-                <h3 class="font-bold text-secondary-900 dark:text-white mb-4">📍 Paris</h3>
-                <p class="text-sm text-secondary-600 dark:text-secondary-400 leading-relaxed mb-4">
-                  123 Avenue de l'Innovation<br>
-                  75001 Paris, France
-                </p>
-                <button class="text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300">
-                  → Voir sur Google Maps
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="lg:col-span-2 animate-slide-in-right">
-            <!-- Form Header -->
-            <div class="mb-12">
-              <h2 class="text-3xl font-black text-secondary-900 dark:text-white mb-3">
-                Laissez-Nous un Message
-              </h2>
-              <p class="text-secondary-600 dark:text-secondary-400">
-                Remplissez ce formulaire et nous vous recontacterons très bientôt pour discuter de vos besoins.
-              </p>
-            </div>
-
-            <!-- Form -->
-            <form @submit.prevent="submitForm" class="space-y-6">
-              <!-- Name & Email -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                    Nom Complet <span class="text-primary-500">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    v-model="form.name"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                    placeholder="Jean Dupont"
-                  />
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                    Email <span class="text-primary-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    required
-                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                    placeholder="jean@company.com"
-                  />
-                </div>
-              </div>
-
-              <!-- Company & Phone -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="company" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                    Entreprise
-                  </label>
-                  <input
-                    id="company"
-                    v-model="form.company"
-                    type="text"
-                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                    placeholder="Your Company"
-                  />
-                </div>
-                <div>
-                  <label for="phone" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                    Téléphone
-                  </label>
-                  <input
-                    id="phone"
-                    v-model="form.phone"
-                    type="tel"
-                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                    placeholder="+33 6 12 34 56 78"
-                  />
-                </div>
-              </div>
-
-              <!-- Project Type -->
-              <div>
-                <label for="projectType" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                  Type de Projet <span class="text-primary-500">*</span>
-                </label>
-                <select
-                  id="projectType"
-                  v-model="form.projectType"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                >
-                  <option value="">Choisir un type</option>
-                  <option value="web">Application Web</option>
-                  <option value="mobile">Application Mobile</option>
-                  <option value="cloud">Infrastructure Cloud</option>
-                  <option value="backend">Backend & API</option>
-                  <option value="consulting">Consulting Technique</option>
-                  <option value="other">Autre</option>
-                </select>
-              </div>
-
-              <!-- Budget -->
-              <div>
-                <label for="budget" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                  Budget Estimé
-                </label>
-                <select
-                  id="budget"
-                  v-model="form.budget"
-                  class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                >
-                  <option value="">Non défini</option>
-                  <option value="5k-15k">5k - 15k €</option>
-                  <option value="15k-50k">15k - 50k €</option>
-                  <option value="50k-100k">50k - 100k €</option>
-                  <option value="100k+">100k+ €</option>
-                </select>
-              </div>
-
-              <!-- Timeline -->
-              <div>
-                <label for="timeline" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                  Timeline
-                </label>
-                <select
-                  id="timeline"
-                  v-model="form.timeline"
-                  class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
-                >
-                  <option value="">Quand avez-vous besoin de démarrer?</option>
-                  <option value="immediately">Immédiatement</option>
-                  <option value="1month">Dans 1 mois</option>
-                  <option value="3months">Dans 3 mois</option>
-                  <option value="6months">Dans 6 mois</option>
-                  <option value="flexible">Flexible</option>
-                </select>
-              </div>
-
-              <!-- Message -->
-              <div>
-                <label for="message" class="block text-sm font-bold text-secondary-900 dark:text-white mb-2">
-                  Décrivez Votre Projet <span class="text-primary-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  v-model="form.message"
-                  required
-                  rows="6"
-                  class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all resize-none"
-                  placeholder="Décrivez votre projet, vos objectifs, et ce que vous recherchez..."
-                ></textarea>
-              </div>
-
-              <!-- Checkbox -->
-              <div class="flex gap-3 items-start">
-                <input
-                  id="agree"
-                  v-model="form.agree"
-                  type="checkbox"
-                  required
-                  class="w-5 h-5 rounded border-secondary-300 dark:border-secondary-700 text-primary-500 focus:ring-2 focus:ring-primary-500 mt-1"
-                />
-                <label for="agree" class="text-sm text-secondary-600 dark:text-secondary-400">
-                  J'accepte que BodyMac Labs me recontacte à propos de mon projet.
-                </label>
-              </div>
-
-              <!-- Success Message -->
-              <div v-if="showSuccess" class="p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
-                <p class="text-green-700 dark:text-green-400 font-semibold">✓ Merci! Nous vous recontacterons très bientôt.</p>
-              </div>
-
-              <!-- Submit Button -->
-              <button
-                type="submit"
-                class="w-full px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg transition-all hover-lift"
-              >
-                Envoyer le Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="py-20 bg-secondary-50 dark:bg-secondary-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12 animate-fade-in-up">
-          <h2 class="text-3xl font-black text-secondary-900 dark:text-white mb-2">
-            Rejoignez Nos Clients Satisfaits
+  <main
+    class="bg-[var(--background)] selection:bg-[var(--primary)] selection:text-white"
+  >
+    <section
+      class="relative min-h-[90vh] flex items-center justify-center bg-[var(--background)] overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 z-0 select-none pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center"
+        >
+          <h2
+            class="text-[20vw] font-black leading-none uppercase italic opacity-[0.03] dark:opacity-[0.05] tracking-tighter text-[var(--text-main)]"
+          >
+            BODYMAC S
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(stat, idx) in stats" :key="idx" class="text-center animate-fade-in-up" :style="{ animationDelay: `${idx * 100}ms` }">
-            <div class="text-5xl font-black text-primary-500 mb-2">{{ stat.number }}</div>
-            <p class="text-secondary-600 dark:text-secondary-400 font-semibold">{{ stat.label }}</p>
+        <div
+          class="absolute inset-0 opacity-[0.02] dark:opacity-[0.07]"
+          style="
+            background-image: radial-gradient(
+              var(--accent) 0.5px,
+              transparent 0.5px
+            );
+            background-size: 40px 40px;
+          "
+        ></div>
+
+        <div
+          class="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-[var(--primary)]/10 rounded-full blur-[120px] animate-pulse"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div class="space-y-10">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 backdrop-blur-sm animate-fade-in"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--primary)] opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-[var(--primary)]"
+              ></span>
+            </span>
+            <span
+              class="text-[10px] font-black uppercase tracking-[0.5em] text-[var(--primary)]"
+              >Architecture First Strategy</span
+            >
+          </div>
+
+          <h1
+            class="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase italic text-[var(--text-main)]"
+          >
+            L'INGÉNIERIE<br />
+            <span
+              class="text-transparent"
+              style="-webkit-text-stroke: 1.5px var(--primary)"
+              >SANS LIMITES.</span
+            >
+          </h1>
+
+          <div class="max-w-2xl mx-auto space-y-6">
+            <p
+              class="text-lg md:text-xl text-[var(--text-muted)] leading-relaxed font-light"
+            >
+              Nous ne nous contentons pas de coder. Nous bâtissons des systèmes
+              <span class="text-[var(--primary)] font-bold">robustes</span>,
+              <span class="text-[var(--primary)] font-bold">scalables</span> et
+              orientés performance.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6"
+            >
+              <button
+                class="group relative px-10 py-5 bg-[var(--primary)] text-white font-black uppercase text-xs tracking-[0.3em] overflow-hidden transition-all hover:bg-[var(--primary-hover)]"
+              >
+                <span class="relative z-10">Démarrer un projet</span>
+                <div
+                  class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                ></div>
+              </button>
+
+              <RouterLink
+                to="/realisations"
+                class="px-10 py-5 border-2 border-[var(--text-main)] text-[var(--text-main)] font-black uppercase text-xs tracking-[0.3em] hover:bg-[var(--text-main)] hover:text-[var(--background)] transition-all"
+              >
+                Nos Réalisations
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-10 left-10 hidden lg:block">
+        <div class="flex flex-col gap-2">
+          <div
+            class="w-1 h-12 bg-gradient-to-b from-[var(--primary)] to-transparent"
+          ></div>
+          <span
+            class="text-[10px] font-mono text-[var(--text-muted)] rotate-180 [writing-mode:vertical-lr]"
+            >SCROLL_FOR_INTENT</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div class="lg:col-span-4 space-y-6">
+            <div class="mb-10">
+              <h2
+                class="text-xs font-black text-[var(--primary)] uppercase tracking-[0.5em] mb-2"
+              >
+                // DIRECT ACCESS
+              </h2>
+              <p
+                class="text-secondary-600 dark:text-secondary-400 text-sm italic"
+              >
+                Besoin d'une réponse immédiate ?
+              </p>
+            </div>
+
+            <a
+              href="tel:640472357"
+              class="group block p-6 bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)] transition-all duration-500 rounded-sm"
+            >
+              <div class="flex items-center gap-6">
+                <div
+                  class="text-3xl grayscale group-hover:grayscale-0 transition-all"
+                >
+                  ☎️
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] font-bold text-secondary-500 uppercase tracking-widest mb-1"
+                  >
+                    Téléphone
+                  </p>
+                  <p
+                    class="font-black text-lg group-hover:text-[var(--primary)] transition-colors tracking-tight"
+                  >
+                    640 472 357 / 696 428 651
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="mailto:bodymacs@gmail.com"
+              class="group block p-6 bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)] transition-all duration-500 rounded-sm"
+            >
+              <div class="flex items-center gap-6">
+                <div
+                  class="text-3xl grayscale group-hover:grayscale-0 transition-all"
+                >
+                  📧
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] font-bold text-secondary-500 uppercase tracking-widest mb-1"
+                  >
+                    Email (Expertise 24h)
+                  </p>
+                  <p
+                    class="font-black text-lg group-hover:text-[var(--primary)] transition-colors tracking-tight"
+                  >
+                    bodymacs@gmail.com
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <div
+              class="p-8 border-l-2 border-[var(--border)] hover:border-[var(--primary)] bg-secondary-50 dark:bg-white/5 transition-all"
+            >
+              <h3
+                class="font-black uppercase tracking-tighter text-xl mb-4 italic"
+              >
+                📍 Localisation
+              </h3>
+              <p class="text-sm text-secondary-500 leading-relaxed mb-6">
+                Bafoussam, Ouest Region<br />
+                Cameroon, Africa
+              </p>
+              <button
+                class="text-[10px] font-black uppercase tracking-widest text-[var(--primary)] hover:underline"
+              >
+                → Itinéraire
+              </button>
+            </div>
+          </div>
+
+          <!-- <div
+            class="lg:col-span-8 p-1 md:p-12 bg-white dark:bg-white/5 border border-[var(--border)] shadow-2xl relative overflow-hidden group"
+          > -->
+
+          <div
+            class="lg:col-span-8 p-1 md:p-12 bg-white dark:bg-white/5 border border-[var(--border)] shadow-2xl relative group"
+          >
+            <div
+              class="absolute -top-20 -right-20 w-64 h-64 bg-[var(--primary)]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+
+            <div class="relative z-10">
+              <div class="mb-12">
+                <h2
+                  class="text-4xl font-black tracking-tighter uppercase italic mb-4"
+                >
+                  Briefez-nous.
+                </h2>
+                <div
+                  class="w-20 h-1 bg-[var(--primary)] mb-6 shadow-[0_0_10px_var(--primary)]"
+                ></div>
+              </div>
+
+              <form
+                @submit.prevent="submitForm"
+                class="space-y-8 md:space-y-10 px-4 md:px-0 max-w-3xl mx-auto"
+              >
+                <!-- Message de succès -->
+                <div
+                  v-if="showSuccess"
+                  class="fixed top-10 left-1/2 -translate-x-1/2 px-6 py-3 rounded-md bg-[var(--primary)] text-white font-semibold shadow-lg transition-all duration-300 opacity-0 animate-fade-in-up z-50"
+                >
+                  {{ successMessage }}
+                </div>
+
+                <!-- Message d'erreur -->
+                <div
+                  v-if="errorMessage"
+                  class="fixed top-10 left-1/2 -translate-x-1/2 px-6 py-3 rounded-md bg-red-600 text-white font-semibold shadow-lg transition-all duration-300 opacity-0 animate-fade-in-up z-50"
+                >
+                  {{ errorMessage }}
+                </div>
+
+                <!-- Row 1: Name + Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                  <div class="group space-y-1">
+                    <label
+                      class="block text-sm md:text-base font-semibold text-[var(--primary)]"
+                    >
+                      Nom Complet *
+                    </label>
+                    <input
+                      v-model="form.name"
+                      type="text"
+                      placeholder="Aubin Simo"
+                      required
+                      class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-4 text-lg md:text-xl placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300"
+                    />
+                  </div>
+
+                  <div class="group space-y-1">
+                    <label
+                      class="block text-sm md:text-base font-semibold text-[var(--primary)]"
+                    >
+                      Email Professionnel *
+                    </label>
+                    <input
+                      v-model="form.email"
+                      type="email"
+                      placeholder="contact@projet.com"
+                      required
+                      class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-4 text-lg md:text-xl placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                <!-- Row 2: Type de Projet + Budget -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                  <div class="group space-y-1 relative">
+                    <label
+                      class="block text-sm md:text-base font-semibold text-gray-500 group-focus-within:text-[var(--primary)]"
+                    >
+                      Type de Projet
+                    </label>
+                    <select
+                      v-model="form.projectType"
+                      required
+                      class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-4 text-lg md:text-xl appearance-none cursor-pointer focus:border-[var(--primary)] outline-none transition-colors duration-300"
+                    >
+                      <option value="" disabled>Sélectionnez un type</option>
+                      <option value="web">Application Web (SaaS)</option>
+                      <option value="mobile">Mobile (iOS / Android)</option>
+                      <option value="cloud">Cloud & DevOps</option>
+                    </select>
+                    <div
+                      class="absolute right-0 bottom-3 pointer-events-none text-gray-400 dark:text-gray-500"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="group space-y-1 relative">
+                    <label
+                      class="block text-sm md:text-base font-semibold text-gray-500 group-focus-within:text-[var(--primary)]"
+                    >
+                      Budget Estimé
+                    </label>
+                    <select
+                      v-model="form.budget"
+                      class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-4 text-lg md:text-xl appearance-none cursor-pointer focus:border-[var(--primary)] outline-none transition-colors duration-300"
+                    >
+                      <option value="">Non défini</option>
+                      <option value="5k-15k">5k - 15k €</option>
+                      <option value="15k-50k">15k - 50k €</option>
+                      <option value="50k+">50k+ €</option>
+                    </select>
+                    <div
+                      class="absolute right-0 bottom-3 pointer-events-none text-gray-400 dark:text-gray-500"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Message -->
+                <div class="group space-y-1">
+                  <label
+                    class="block text-sm md:text-base font-semibold text-gray-500 group-focus-within:text-[var(--primary)]"
+                  >
+                    Détails du projet *
+                  </label>
+                  <textarea
+                    v-model="form.message"
+                    rows="5"
+                    required
+                    placeholder="Parlez-nous de vos objectifs et de vos contraintes..."
+                    class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-4 text-lg md:text-xl resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300"
+                  ></textarea>
+                </div>
+
+                <!-- Row 4: Checkbox -->
+                <div class="flex items-start gap-3">
+                  <input
+                    id="agree"
+                    v-model="form.agree"
+                    type="checkbox"
+                    required
+                    class="accent-[var(--primary)] w-5 h-5 cursor-pointer rounded border-gray-400 dark:border-gray-600"
+                  />
+                  <label
+                    for="agree"
+                    class="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed cursor-pointer"
+                  >
+                    J'accepte que l'ingénierie de
+                    <strong>BodyMacs</strong> traite mes données pour me
+                    recontacter dans le cadre de ma demande.
+                  </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="w-full py-2 bg-[var(--primary)] text-white font-semibold text-lg uppercase tracking-wide rounded-md shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:scale-95"
+                >
+                  Transmettre le Brief
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-2 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-3 gap-20 text-center">
+          <div v-for="(stat, idx) in stats" :key="idx" class="space-y-3">
+            <div class="text-4xl font-semibold text-[var(--primary)]">
+              {{ stat.number }}
+            </div>
+
+            <p class="text-sm text-white/50 tracking-wide">
+              {{ stat.label }}
+            </p>
           </div>
         </div>
       </div>
     </section>
   </main>
 </template>
-
 <script setup lang="ts">
-import { ref } from 'vue'
-import emailjs from 'emailjs-com'
-
+import { ref } from "vue";
+import emailjs from "emailjs-com";
+const loading = ref(false); // <-- Ajoute ça
 const form = ref({
-  name: '',
-  email: '',
-  company: '',
-  phone: '',
-  projectType: '',
-  budget: '',
-  timeline: '',
-  message: '',
-  agree: false
-})
+  name: "",
+  email: "",
+  company: "",
+  phone: "",
+  projectType: "",
+  budget: "",
+  timeline: "",
+  message: "",
+  agree: false,
+});
 
-const showSuccess = ref(false)
-const successMessage = ref('')
-const errorMessage = ref('')
+const showSuccess = ref(false);
+const successMessage = ref("");
+const errorMessage = ref("");
 
 const stats = [
-  { number: '24h', label: 'Temps de réponse max' },
-  { number: '50+', label: 'Projets réussis' },
-  { number: '95%', label: 'Satisfaction client' }
-]
+  { number: "24h", label: "Temps de réponse max" },
+  { number: "50+", label: "Projets réussis" },
+  { number: "95%", label: "Satisfaction client" },
+];
+
+// const submitForm = async () => {
+//   sendEmail();
+//   showSuccess.value = true;
+//   setTimeout(() => {
+//     form.value = {
+//       name: "",
+//       email: "",
+//       company: "",
+//       phone: "",
+//       projectType: "",
+//       budget: "",
+//       timeline: "",
+//       message: "",
+//       agree: false,
+//     };
+//     showSuccess.value = false;
+//   }, 3000);
+// };
 
 const submitForm = async () => {
-  // Préparation EmailJS (à compléter avec tes identifiants)
-  // await window.emailjs.send('service_id', 'template_id', {
-  //   name: form.value.name,
-  //   email: form.value.email,
-  //   company: form.value.company,
-  //   phone: form.value.phone,
-  //   projectType: form.value.projectType,
-  //   budget: form.value.budget,
-  //   timeline: form.value.timeline,
-  //   message: form.value.message
-  // }, 'user_id')
-  sendEmail()
-  showSuccess.value = true
-  setTimeout(() => {
+  if (loading.value) return;
+  loading.value = true;
+
+  try {
+    await sendEmail();
+
+    successMessage.value = "Votre message a été envoyé avec succès.";
+    showSuccess.value = true;
+
+    setTimeout(() => {
+      showSuccess.value = false;
+    }, 3000);
+
+    // Reset formulaire
     form.value = {
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      projectType: '',
-      budget: '',
-      timeline: '',
-      message: '',
-      agree: false
-    }
-    showSuccess.value = false
-  }, 3000)
-}
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      projectType: "",
+      budget: "",
+      timeline: "",
+      message: "",
+      agree: false,
+    };
+  } catch (err) {
+    errorMessage.value = "Une erreur est survenue. Veuillez réessayer.";
+    setTimeout(() => {
+      errorMessage.value = "";
+    }, 3000);
+  } finally {
+    loading.value = false;
+  }
+};
 
 const sendEmail = () => {
   // Format date/heure d'envoi
   const now = new Date();
-  const time = now.toLocaleString('fr-FR', {
-    dateStyle: 'full',
-    timeStyle: 'short'
+  const time = now.toLocaleString("fr-FR", {
+    dateStyle: "full",
+    timeStyle: "short",
   });
-  emailjs.send(
-    'service_4dm2t9a', // Service ID
-    'template_ch05lag', // Template ID
-    {
-      from_name: form.value.name,
-      from_email: form.value.email,
-      company: form.value.company,
-      phone: form.value.phone,
-      projectType: form.value.projectType,
-      budget: form.value.budget,
-      timeline: form.value.timeline,
-      message: form.value.message,
-      time: time
-    },
-    'JB6T0Rx2FNlGbn1mL' // Public Key
-  ).then(
-    (result) => {
-      // Succès : afficher un message ou vider le formulaire
-      successMessage.value = 'Votre message a été envoyé avec succès.'
-    },
-    (error) => {
-      // Erreur : afficher un message d'erreur
-      errorMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
-    }
-  )
-}
+  emailjs
+    .send(
+      "service_4dm2t9a", // Service ID
+      "template_ch05lag", // Template ID
+      {
+        from_name: form.value.name,
+        from_email: form.value.email,
+        company: form.value.company,
+        phone: form.value.phone,
+        projectType: form.value.projectType,
+        budget: form.value.budget,
+        timeline: form.value.timeline,
+        message: form.value.message,
+        time: time,
+      },
+      "JB6T0Rx2FNlGbn1mL", // Public Key
+    )
+    .then(
+      (result) => {
+        // Succès : afficher un message ou vider le formulaire
+        successMessage.value = "Votre message a été envoyé avec succès.";
+      },
+      (error) => {
+        // Erreur : afficher un message d'erreur
+        errorMessage.value = "Une erreur est survenue. Veuillez réessayer.";
+      },
+    );
+};
 </script>
+<style scoped>
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effet de lueur sur le texte au survol de la section */
+section:hover h1 span {
+  text-shadow: 0 0 30px rgba(243, 146, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+</style>

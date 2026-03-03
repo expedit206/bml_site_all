@@ -44,16 +44,17 @@
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4">
-            <button
-              class="px-8 py-4 bg-[var(--primary)] text-white font-black rounded-xl hover:-translate-y-1 transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
+            <RouterLink
+              to="/contact"
+              class="px-8 py-4 bg-[var(--primary)] text-white font-black rounded hover:-translate-y-1 transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
             >
               Commencer un Projet <ArrowRight :size="20" />
-            </button>
-            <button
+            </RouterLink>
+            <!-- <button
               class="px-8 py-4 border-2 border-[var(--border)] font-bold rounded-xl hover:bg-[var(--surface)] transition-all"
             >
               Nos Cas d'Usage
-            </button>
+            </button> -->
           </div>
         </div>
 
@@ -175,7 +176,7 @@
           :key="p.name"
           class="group relative bg-[var(--surface)] rounded-[32px] overflow-hidden border border-[var(--border)] hover:border-[var(--primary)] transition-all duration-500"
         >
-          <div class="h-64 overflow-hidden relative">
+          <div class=" overflow-hidden relative w-[400px] h-48">
             <img
               :src="p.image"
               :alt="p.name"
@@ -255,7 +256,8 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-10 items-center pt-6">
-            <button
+            <RouterLink
+              to="/contact"
               class="group flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[var(--text-main)] hover:text-[var(--primary)] transition-colors"
             >
               Planifier un appel
@@ -267,7 +269,7 @@
                   class="group-hover:translate-x-1 transition-transform"
                 />
               </div>
-            </button>
+            </RouterLink>
 
             <div class="hidden sm:block w-[1px] h-8 bg-[var(--border)]"></div>
 
@@ -291,6 +293,7 @@ import {
   Smartphone,
   Cloud,
   ArrowRight,
+  Router,
 } from "lucide-vue-next";
 import confetti from "canvas-confetti";
 
