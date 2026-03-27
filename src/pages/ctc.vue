@@ -278,10 +278,10 @@
                   class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-700 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all"
                 >
                   <option value="">Non défini</option>
-                  <option value="5k-15k">5k - 15k €</option>
-                  <option value="15k-50k">15k - 50k €</option>
-                  <option value="50k-100k">50k - 100k €</option>
-                  <option value="100k+">100k+ €</option>
+                  <option value="5k-15k">5k - 15k FCFA</option>
+                  <option value="15k-50k">15k - 50k FCFA</option>
+                  <option value="50k-100k">50k - 100k FCFA</option>
+                  <option value="100k+">100k+ FCFA</option>
                 </select>
               </div>
 
@@ -338,7 +338,7 @@
                   for="agree"
                   class="text-sm text-secondary-600 dark:text-secondary-400"
                 >
-                  J'accepte que BodyMac Labs me recontacte à propos de mon
+                  J'accepte que BodyMacs Labs me recontacte à propos de mon
                   projet.
                 </label>
               </div>

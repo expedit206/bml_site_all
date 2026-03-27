@@ -61,7 +61,7 @@ const topServices = [
   },
 ];
 
-// 3. Contenu Intégral - Pourquoi BodyMac Labs (6 bénéfices)
+// 3. Contenu Intégral - Pourquoi BodyMacs Labs (6 bénéfices)
 const benefits = [
   {
     icon: Users,
@@ -168,7 +168,7 @@ const featuredProjects = [
             <span class="text-[var(--primary)]">en Réalité Digitale</span>
           </h1>
           <p class="text-lg text-[var(--text-muted)] max-w-lg">
-            BodyMac Labs accompagne les entreprises ambitieuses à transformer
+            BodyMacs Labs accompagne les entreprises ambitieuses à transformer
             leurs défis numériques en opportunités. Stratégie. Technologie.
             Résultats.
           </p>
@@ -263,7 +263,7 @@ const featuredProjects = [
       >
         <div class="space-y-8">
           <h2 class="text-4xl font-black leading-tight">
-            Pourquoi les Meilleurs Choisissent BodyMac Labs
+            Pourquoi les Meilleurs Choisissent BodyMacs Labs
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div

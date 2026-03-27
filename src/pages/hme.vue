@@ -43,7 +43,7 @@
             <p
               class="text-lg text-secondary-600 dark:text-secondary-300 leading-relaxed max-w-lg"
             >
-              BodyMac Labs accompagne les entreprises ambitieuses à transformer
+              BodyMacs Labs accompagne les entreprises ambitieuses à transformer
               leurs défis numériques en opportunités de croissance. Stratégie.
               Technologie. Résultats.
             </p>
@@ -80,7 +80,7 @@
             >
               <div class="animate-fade-in-up">
                 <div class="text-2xl md:text-3xl font-black text-primary-500">
-                  50+
+                  100+
                 </div>
                 <p class="text-sm text-secondary-600 dark:text-secondary-400">
                   Projets Livrés
@@ -88,7 +88,7 @@
               </div>
               <div class="animate-fade-in-up" style="animation-delay: 100ms">
                 <div class="text-2xl md:text-3xl font-black text-primary-500">
-                  30+
+                  40+
                 </div>
                 <p class="text-sm text-secondary-600 dark:text-secondary-400">
                   Clients Heureux
@@ -96,7 +96,7 @@
               </div>
               <div class="animate-fade-in-up" style="animation-delay: 200ms">
                 <div class="text-2xl md:text-3xl font-black text-primary-500">
-                  10ans
+                  7ans
                 </div>
                 <p class="text-sm text-secondary-600 dark:text-secondary-400">
                   D'Expertise
@@ -218,7 +218,7 @@
             <h2
               class="text-4xl font-black text-secondary-900 dark:text-white leading-tight"
             >
-              Pourquoi les Meilleurs Choisissent BodyMac Labs
+              Pourquoi les Meilleurs Choisissent BodyMacs Labs
             </h2>
             <div class="space-y-4">
               <div

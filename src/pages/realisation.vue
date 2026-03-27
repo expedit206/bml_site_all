@@ -492,15 +492,15 @@ const projects = [
 ];
 
 const statistics = [
-  { id: 1, number: "50+", label: "Projets Réalisés" },
-  { id: 2, number: "30+", label: "Clients Heureux" },
-  { id: 3, number: "10+", label: "Années d'Expertise" },
-  { id: 4, number: "200M+", label: "Utilisateurs Impactés" },
+  { id: 1, number: "60+", label: "Projets Réalisés" },
+  { id: 2, number: "40+", label: "Clients Heureux" },
+  { id: 3, number: "7+", label: "Années d'Expertise" },
+  { id: 4, number: "2k+", label: "Utilisateurs Impactés" },
 ];
 
 const testimonials = [
   {
-    text: "BodyMac Labs n'est pas juste un prestataire, c'est un partenaire stratégique. Ils comprennent nos enjeux métier et proposent des solutions qui impactent vraiment.",
+    text: "BodyMacs Labs n'est pas juste un prestataire, c'est un partenaire stratégique. Ils comprennent nos enjeux métier et proposent des solutions qui impactent vraiment.",
     author: "Olivier Martin",
     company: "CEO, TechStart",
   },

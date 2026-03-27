@@ -3,7 +3,7 @@ import i18next from 'i18next'
 const resources = {
   fr: {
     translation: {
-      title: 'BodyMac Labs - Accueil',
+      title: 'BodyMacs Labs - Accueil',
       nav: {
         home: 'Accueil',
         services: 'Services',
@@ -12,13 +12,13 @@ const resources = {
         contact: 'Contact',
       },
       hero: {
-        title: 'Bienvenue chez BodyMac Labs',
+        title: 'Bienvenue chez BodyMacs Labs',
         subtitle: 'Créons ensemble des solutions innovantes pour votre entreprise',
         cta: 'Démarrer maintenant',
       },
       about: {
         title: 'À propos de nous',
-        description: 'Nous sommes BodyMac Labs, une équipe passionnée par l\'innovation et la technologie.',
+        description: 'Nous sommes BodyMacs Labs, une équipe passionnée par l\'innovation et la technologie.',
       },
       services: {
         title: 'Nos Services',
@@ -33,13 +33,13 @@ const resources = {
         description: 'Nous serions heureux d\'avoir de vos nouvelles',
       },
       footer: {
-        copyright: '© 2024 BodyMac Labs. Tous droits réservés.',
+        copyright: '© 2024 BodyMacs Labs. Tous droits réservés.',
       },
     }
   },
   en: {
     translation: {
-      title: 'BodyMac Labs - Home',
+      title: 'BodyMacs Labs - Home',
       nav: {
         home: 'Home',
         services: 'Services',
@@ -48,13 +48,13 @@ const resources = {
         contact: 'Contact',
       },
       hero: {
-        title: 'Welcome to BodyMac Labs',
+        title: 'Welcome to BodyMacs Labs',
         subtitle: 'Let\'s create innovative solutions for your business together',
         cta: 'Get Started',
       },
       about: {
         title: 'About Us',
-        description: 'We are BodyMac Labs, a team passionate about innovation and technology.',
+        description: 'We are BodyMacs Labs, a team passionate about innovation and technology.',
       },
       services: {
         title: 'Our Services',
@@ -69,7 +69,7 @@ const resources = {
         description: 'We would love to hear from you',
       },
       footer: {
-        copyright: '© 2024 BodyMac Labs. All rights reserved.',
+        copyright: '© 2024 BodyMacs Labs. All rights reserved.',
       },
     }
   }

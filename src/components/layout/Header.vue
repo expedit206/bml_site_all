@@ -8,17 +8,7 @@
   >
     <nav class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between h-20">
-        <!-- <RouterLink to="/" class="flex items-center group">
-          <div
-            class="p-2 rounded-xl transition-all duration-300 group-hover:bg-[var(--surface)]"
-          >
-            <img
-              src="/img/bmllogo-removebg-preview.png"
-              alt="BodyMacs"
-              class="w-16 h-16 rounded-lg object-cover"
-            />
-          </div>
-        </RouterLink> -->
+        
 
         <RouterLink to="/" class="flex items-center group">
           <div
@@ -27,11 +17,11 @@
             <img
               src="/img/bmllogo-removebg-preview.png"
               alt="BodyMacs"
-              class="w-16 h-16 rounded-lg object-cover"
+              class="w-[6rem] h-[6rem] rounded-lg object-cover"
             />
 
             <span
-              class="hidden dark:block -mt-3 text-xs font-bold tracking-tight text-[var(--text-main)]"
+              class="hidden dark:block -mt-3 text-lg font-bold tracking-tight text-[var(--text-main)]"
             >
               Body Macs
             </span>
@@ -73,12 +63,12 @@
     :class="isVisible ? 'translate-y-0' : 'translate-y-full'"
     style="background-color: var(--background)"
   >
-    <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+    <div class="grid h-full  grid-cols-5 mx-auto font-medium">
       <RouterLink
         v-for="route in navRoutes"
         :key="route.name"
         :to="route.path"
-        class="inline-flex flex-col items-center justify-center px-5 hover:bg-[var(--surface)] group"
+        class="inline-flex flex-col items-center justify-center px-3 hover:bg-[var(--surface)] group"
         active-class="text-[var(--primary)]"
       >
         <component
@@ -121,17 +111,9 @@ import {
   Mail, // Pour Contact
   Moon,
   Sun,
-  Menu,
-  X,
-} from "lucide-vue-next";
 
-// const navRoutes = [
-//   // { path: '/', name: 'home', label: 'home' },
-//   { path: "/services", name: "services", label: "services" },
-//   { path: "/realisations", name: "realisations", label: "realisations" },
-//   { path: "/about", name: "about", label: "about" },
-//   { path: "/contact", name: "contact", label: "contact" },
-// ];
+  Home,
+} from "lucide-vue-next";
 
 const changeLanguage = () => {
   locale.value = language.value;
@@ -156,6 +138,7 @@ onMounted(() => window.addEventListener("scroll", handleScroll));
 onUnmounted(() => window.removeEventListener("scroll", handleScroll));
 
 const navRoutes = [
+  { path: "/", name: "home", label: "home", icon: Home },
   { path: "/services", name: "services", label: "services", icon: LayoutGrid },
   {
     path: "/realisations",

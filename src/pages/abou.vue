@@ -30,7 +30,7 @@
           <h1
             class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight"
           >
-            À Propos de BodyMac Labs
+            À Propos de BodyMacs Labs
           </h1>
           <p class="text-lg text-secondary-200 max-w-2xl leading-relaxed">
             Depuis 10 ans, nous accompagnons les entreprises à transformer leurs
@@ -53,7 +53,7 @@
             <p
               class="text-lg text-secondary-600 dark:text-secondary-300 leading-relaxed"
             >
-              BodyMac Labs n'existe que pour une raison: transformer les idées
+              BodyMacs Labs n'existe que pour une raison: transformer les idées
               ambitieuses en produits digitaux qui impactent. Pas de buzzwords.
               Pas de promesses vides. Juste du code de qualité, des processus
               rigoureux, et des résultats mesurables.
@@ -199,7 +199,7 @@
           <h2
             class="text-4xl font-black text-secondary-900 dark:text-white mb-4"
           >
-            L'Équipe BodyMac Labs
+            L'Équipe BodyMacs Labs
           </h2>
           <p
             class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto"
@@ -293,7 +293,7 @@
           <h2
             class="text-4xl font-black text-secondary-900 dark:text-white mb-4"
           >
-            Pourquoi les Meilleurs Choisissent BodyMac Labs
+            Pourquoi les Meilleurs Choisissent BodyMacs Labs
           </h2>
         </div>
 
@@ -400,12 +400,12 @@ const team = [
   },
   {
     icon: "🖥️",
-    name: "Mciagnessi Dominique",
+    name: "Tsemo Dominique",
     title: "Développeur Back-end",
     bio: "Développement et maintenance des API, gestion des bases de données, sécurité et performance côté serveur.",
-    skills: "Laravel, SQL, REST",
+    skills: "Laravel, SQL,API REST",
     gradientClass: "from-gray-100 to-gray-50",
-    photo: "/img/equipe/mciagnessi dominique.jpg",
+    photo: "/img/equipe/Tsemo dominique.jpg",
   },
   {
     icon: "💻",
@@ -413,7 +413,7 @@ const team = [
     title: "Développeur Front-end",
 
     bio: "devops .Développement de l’interface utilisateur, optimisation UX, création de composants interactifs .",
-    skills: "Vue.js, React, UI/UX",
+    skills: "Vue.js, React, UI/UX Interface",
     gradientClass: "from-gray-100 to-gray-50",
     photo: "/img/equipe/yannick.png",
   },
@@ -459,7 +459,7 @@ const timeline = [
   {
     year: "2014",
     title:
-      "BodyMac Labs Founded. Première mission: moderniser une legacy app universitaire.",
+      "BodyMacs Labs Founded. Première mission: moderniser une legacy app universitaire.",
   },
   {
     year: "2016",
@@ -481,7 +481,7 @@ const timeline = [
   },
   {
     year: "2024",
-    title: "BodyMac Labs classée top digital agency. Expansion internationale.",
+    title: "BodyMacs Labs classée top digital agency. Expansion internationale.",
   },
 ];
 

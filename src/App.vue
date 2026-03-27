@@ -13,8 +13,10 @@ import { RouterView } from 'vue-router'
 import Header from './components/layout/Header.vue'
 import Footer from './components/layout/Footer.vue'
 import { useDarkMode } from './utils/composables'
+import { useAppSeo } from './composables/useAppSeo'
 
 const { isDark } = useDarkMode()
+useAppSeo()
 
 // Watch for dark mode changes
 watch(isDark, (newValue) => {

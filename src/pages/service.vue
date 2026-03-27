@@ -2,7 +2,7 @@
   <main>
     <!-- Header Section -->
     <section
-      class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-12 md:py-16 overflow-hidden"
+      class="relative bg-secondary-900 dark:bg-secondary-950 text-white py-4 md:py-12 lg:py-16 overflow-hidden "
     >
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
@@ -520,7 +520,7 @@ const packages = [
   {
     name: "Starter",
     desc: "Pour les petits projets et MVP",
-    startPrice: "5,000 €",
+    startPrice: "5,000 FCFA",
     featured: false,
     features: [
       "Projet simple (1-2 mois)",
@@ -534,7 +534,7 @@ const packages = [
   {
     name: "Professional",
     desc: "Pour les entreprises en croissance",
-    startPrice: "15,000 €",
+    startPrice: "15,000 FCFA",
     featured: true,
     features: [
       "Projet complet (3-6 mois)",
@@ -549,7 +549,7 @@ const packages = [
   {
     name: "Enterprise",
     desc: "Solutions custom complexes",
-    startPrice: "50,000 €",
+    startPrice: "50,000 FCFA",
     featured: false,
     features: [
       "Projet complexe (6+ mois)",

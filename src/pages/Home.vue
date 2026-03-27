@@ -23,7 +23,7 @@
             <span class="text-[var(--primary)]">en Réalité Digitale</span>
           </h1>
           <p class="text-lg text-[var(--text-muted)] max-w-lg">
-            BodyMac Labs accompagne les entreprises ambitieuses à transformer
+            BodyMacs Labs accompagne les entreprises ambitieuses à transformer
             leurs défis numériques en opportunités. Stratégie. Technologie.
             Résultats.
           </p>
@@ -302,9 +302,9 @@ const statsSection = ref(null);
 const hasAnimated = ref(false);
 
 const stats = ref([
-  { label: "Projets Livrés", value: 50, current: 0, suffix: "+" },
-  { label: "Clients Heureux", value: 30, current: 0, suffix: "+" },
-  { label: "D'Expertise", value: 10, current: 0, suffix: "ans" },
+  { label: "Projets Livrés", value: 60, current: 0, suffix: "+" },
+  { label: "Clients Heureux", value: 40, current: 0, suffix: "+" },
+  { label: "D'Expertise", value: 7, current: 0, suffix: "ans" },
 ]);
 
 const featuredProjects = [

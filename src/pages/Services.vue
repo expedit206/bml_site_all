@@ -1,178 +1,10 @@
 <template>
   <main class="font-medium tracking-tight bg-[var(--background)]">
-    <!-- <section
-      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)]"
-    >
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="space-y-8">
-          <div
-            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit"
-          >
-            <span
-              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
-            ></span>
-            <span
-              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
-              >Expertise Technique</span
-            >
-          </div>
-
-          <h1
-            class="text-5xl md:text-8xl font-medium tracking-tighter text-[var(--text-main)] leading-[0.95]"
-          >
-            Services <br />
-            <span class="text-[var(--primary)] text-outline">sur Mesure.</span>
-          </h1>
-
-          <p
-            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
-          >
-            Architectures scalables et solutions digitales de haute précision,
-            alignées sur vos impératifs business. De la modélisation à la mise
-            en production.
-          </p>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- <section
-      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
-    >
-      <div
-        class="absolute top-0 right-0 w-1/2 h-full hidden lg:block pointer-events-none overflow-hidden"
-      >
-        <div class="relative w-full h-full flex items-center justify-center">
-          <div
-            class="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[20vw] font-black leading-none uppercase text-outline opacity-[0.03] select-none italic"
-          >
-            DASH
-          </div>
-
-          <div class="relative z-10 w-full max-w-md space-y-12 pr-10">
-            <div
-              class="flex flex-col items-end animate-fade-in"
-              style="animation-delay: 200ms"
-            >
-              <span
-                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-2"
-                >System.Performance</span
-              >
-              <div
-                class="text-7xl font-black tracking-tighter text-[var(--text-main)] opacity-20 italic"
-              >
-                99.9%
-              </div>
-              <div
-                class="w-full h-px bg-gradient-to-r from-transparent via-[var(--border)] to-[var(--primary)]/30 mt-2"
-              ></div>
-            </div>
-
-            <div
-              class="flex flex-col items-end animate-fade-in"
-              style="animation-delay: 400ms"
-            >
-              <span
-                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--text-main)] mb-2"
-                >Network.Latency</span
-              >
-              <div
-                class="text-7xl font-black tracking-tighter text-[var(--primary)] opacity-40 italic"
-              >
-                12ms
-              </div>
-              <div class="flex gap-1 mt-2">
-                <div
-                  v-for="i in 5"
-                  :key="i"
-                  class="w-6 h-1 bg-[var(--primary)]/20"
-                  :class="{ 'bg-[var(--primary)]': i < 4 }"
-                ></div>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-col items-end animate-fade-in"
-              style="animation-delay: 600ms"
-            >
-              <span
-                class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--text-main)] mb-2"
-                >Status.Core_Engine</span
-              >
-              <div
-                class="text-4xl font-black tracking-tighter text-[var(--text-main)] opacity-20 uppercase"
-              >
-                Operational
-              </div>
-            </div>
-          </div>
-
-          <svg
-            class="absolute inset-0 w-full h-full opacity-[0.05]"
-            viewBox="0 0 400 400"
-          >
-            <rect
-              x="250"
-              y="50"
-              width="80"
-              height="100"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-            />
-            <rect
-              x="100"
-              y="250"
-              width="80"
-              height="60"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-            />
-            <path
-              d="M 180 280 L 250 100"
-              stroke="currentColor"
-              stroke-width="1"
-              stroke-dasharray="5,5"
-            />
-          </svg>
-        </div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-20">
-        <div class="space-y-8">
-          <div
-            class="inline-flex items-center gap-3 px-3 py-1 border border-[var(--primary)]/30 rounded-full w-fit bg-[var(--background)]"
-          >
-            <span
-              class="w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse"
-            ></span>
-            <span
-              class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--primary)]"
-              >Expertise Technique</span
-            >
-          </div>
-
-          <h1
-            class="text-6xl md:text-8xl font-medium tracking-tighter text-[var(--text-main)] leading-[0.95]"
-          >
-            Services <br />
-            <span class="text-[var(--primary)] text-outline">sur Mesure.</span>
-          </h1>
-
-          <p
-            class="text-sm md:text-base text-[var(--text-muted)] max-w-xl leading-relaxed font-light"
-          >
-            Architectures scalables et solutions digitales de haute précision,
-            alignées sur vos impératifs business. De la modélisation à la mise
-            en production.
-          </p>
-        </div>
-      </div>
-    </section> -->
 
     <section
-      class="relative pt-32 pb-20 overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
-    >
+     class="relative md:pt-32 md:pb-20 pb-8 pt-12 overflow-hidden border-b border-[var(--border)] bg-[var(--background)]"
+      >
+    
       <div class="absolute inset-0 pointer-events-none select-none">
         <div
           class="absolute -right-20 top-1/4 text-[40vw] lg:text-[20vw] font-black uppercase text-outline opacity-[0.03] italic leading-none"
@@ -245,7 +77,7 @@
       </div>
     </section>
 
-    <section class="py-24">
+    <section class="md:py-24 py-12">
       <div class="max-w-7xl mx-auto px-4">
         <div class="space-y-32">
           <div
@@ -349,7 +181,7 @@
     </section>
 
     <section
-      class="py-24 border-y border-[var(--border)] bg-[var(--primary)]/[0.02]"
+      class="py-12 md:y-12 border-[var(--border)] bg-[var(--primary)]/[0.02]"
     >
       <div class="max-w-7xl mx-auto px-4">
         <h2
@@ -379,7 +211,7 @@
       </div>
     </section>
 
-    <section class="py-24">
+    <section class="md:py-24 py-12">
       <div class="max-w-7xl mx-auto px-4">
         <div
           class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[var(--border)] rounded-[40px] overflow-hidden"
@@ -387,7 +219,7 @@
           <div
             v-for="(pkg, idx) in packages"
             :key="idx"
-            class="p-12 border-r last:border-r-0 border-[var(--border)] hover:bg-[var(--primary)]/5 transition-colors duration-500 group"
+            class="p-12 border-r last:border-r-0 border-[var(--border)] hover:bg-[var(--primary)]/5 transition-colors duration-500 group "
           >
             <h3
               class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--primary)] mb-6 italic"
@@ -412,11 +244,11 @@
                 <Check :size="12" class="text-[var(--primary)]" /> {{ f }}
               </li>
             </ul>
-            <button
-              class="w-full py-4 border border-[var(--text-main)] text-[10px] font-black uppercase tracking-widest group-hover:bg-[var(--text-main)] group-hover:text-[var(--background)] transition-all"
-            >
+        
+            <router-link to="/contact"
+              :class="[pkg.name =='Pro' ?'bg-[var(--text-main)] text-[var(--background)]':'', 'w-full py-4 block text-center border border-[var(--text-main)] text-[10px] font-black uppercase tracking-widest group-hover:bg-[var(--text-main)] group-hover:text-[var(--background)] transition-all' ]">
               Commander
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -499,19 +331,19 @@ const processSteps = [
 const packages = [
   {
     name: "Starter",
-    startPrice: "5.000 €",
+    startPrice: "75.000 FCFA",
     desc: "Pour MVP et prototypes",
     features: ["1-2 mois de dev", "UI Standard", "3 mois support"],
   },
   {
     name: "Pro",
-    startPrice: "15.000 €",
+    startPrice: "225.000 FCFA",
     desc: "Pour entreprises en croissance",
     features: ["3-6 mois de dev", "Architecture Custom", "1 an support"],
   },
   {
     name: "Enterprise",
-    startPrice: "50.000 €",
+    startPrice: "500.000 FCFA",
     desc: "Solutions complexes",
     features: ["6+ mois de dev", "Microservices", "Support 24/7"],
   },

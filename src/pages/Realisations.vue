@@ -155,6 +155,7 @@
                 <img
                   v-if="project.image"
                   :src="project.image"
+                  :alt="project.name"
                   class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 group-hover:grayscale-0"
                 />
                 <div
@@ -328,9 +329,9 @@ const projects = [
     solution:
       "Plateforme mobile et web avec suivi des absences, notifications, et accès parent/élève.",
     results: [
-      { label: "Utilisateurs", value: "+50k" },
+      { label: "Utilisateurs", value: "+30k" },
       { label: "Taux d'absentéisme", value: "-40%" },
-      { label: "Établissements", value: "100+" },
+      { label: "Établissements", value: "20+" },
     ],
     technologies: ["React Native", "Node.js", "PostgreSQL"],
     quote:
@@ -515,15 +516,15 @@ const projects = [
 ];
 
 const statistics = [
-  { id: 1, number: "50+", label: "Projets Réalisés" },
-  { id: 2, number: "30+", label: "Clients Heureux" },
-  { id: 3, number: "10+", label: "Années d'Expertise" },
-  { id: 4, number: "200M+", label: "Utilisateurs Impactés" },
+  { id: 1, number: "60+", label: "Projets Réalisés" },
+  { id: 2, number: "40+", label: "Clients Heureux" },
+  { id: 3, number: "7+", label: "Années d'Expertise" },
+  { id: 4, number: "20k+", label: "Utilisateurs Impactés" },
 ];
 
 const testimonials = [
   {
-    text: "BodyMac Labs n'est pas juste un prestataire, c'est un partenaire stratégique. Ils comprennent nos enjeux métier et proposent des solutions qui impactent vraiment.",
+    text: "BodyMacs Labs n'est pas juste un prestataire, c'est un partenaire stratégique. Ils comprennent nos enjeux métier et proposent des solutions qui impactent vraiment.",
     author: "Olivier Kengne",
     company: "Ingenieur Reseau",
   },

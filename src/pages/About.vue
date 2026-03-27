@@ -27,7 +27,7 @@
             class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] italic uppercase text-[var(--text-main)]"
           >
             À Propos de <br />
-            <span class="text-outline">BodyMac .</span>
+            <span class="text-outline">BodyMacs .</span>
           </h1>
 
           <p
@@ -51,7 +51,7 @@
             Notre Mission
           </h2>
           <p class="text-xl text-[var(--text-main)] leading-relaxed font-light">
-            BodyMac transforme les idées ambitieuses en produits digitaux qui
+            BodyMacs transforme les idées ambitieuses en produits digitaux qui
             impactent.
             <span class="text-[var(--primary)] font-bold"
               >Pas de promesses vides.</span
@@ -126,8 +126,8 @@
             </h2>
           </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div
             v-for="(member, idx) in team"
             :key="idx"
@@ -264,7 +264,7 @@
       </div>
     </section>
 
-    <section class="relative py-32 overflow-hidden">
+    <section class="relative md:py-20 lg:py-28 py-12 overflow-hidden">
       <div
         class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
       ></div>
@@ -332,11 +332,11 @@ const missionHighlights = [
 //   },
 //   {
 //     icon: "🖥️",
-//     name: "Mciagnessi Dominique",
+//     name: "Tsemo Dominique",
 //     title: "Développeur Back-end",
 //     bio: "Gestion des API et performance serveur.",
 //     skills: "Laravel, SQL, REST",
-//     photo: "/img/equipe/mciagnessi dominique.jpg",
+//     photo: "/img/equipe/Tsemo dominique.jpg",
 //   },
 //   {
 //     icon: "💻",
@@ -371,7 +371,7 @@ const team = [
 
   {
     icon: "🖥️",
-    name: "Mciagnessi Dominique",
+    name: "Tsemo Dominique",
     title: "Développeur Back-end",
     bio: "Développement et maintenance des API, gestion des bases de données, sécurité et performance côté serveur.",
     skills: "Laravel, SQL, REST",
@@ -429,7 +429,7 @@ const team = [
 const timeline = [
   {
     year: "2014",
-    title: "Fondation de BodyMac . Focus sur l'ingénierie logicielle pure.",
+    title: "Fondation de BodyMacs . Focus sur l'ingénierie logicielle pure.",
   },
   {
     year: "2018",

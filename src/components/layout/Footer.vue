@@ -17,7 +17,7 @@
             <span
               class="text-xs font-bold uppercase tracking-widest text-[var(--text-main)]"
             >
-              BodyMac <span class="text-[var(--primary)]">Labs</span>
+              BodyMacs <span class="text-[var(--primary)]">Labs</span>
             </span>
           </div>
           <p

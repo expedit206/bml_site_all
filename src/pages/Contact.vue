@@ -12,7 +12,7 @@
           <h2
             class="text-[40vw] md:text-[20vw] font-black leading-none uppercase italic opacity-[0.03] dark:opacity-[0.05] tracking-tighter text-[var(--text-main)]"
           >
-            BODYMAC S
+            BodyMacs S
           </h2>
         </div>
 
@@ -140,7 +140,7 @@
                   <p
                     class="text-[10px] font-bold text-secondary-500 uppercase tracking-widest mb-1"
                   >
-                    Téléphone
+                    Téléphone 
                   </p>
                   <p
                     class="font-black text-lg group-hover:text-[var(--primary)] transition-colors tracking-tight"
@@ -250,7 +250,7 @@
                     <input
                       v-model="form.name"
                       type="text"
-                      placeholder="Aubin Simo"
+                      placeholder="Votre Nom"
                       required
                       class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-2 md:py-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
                     />
@@ -272,8 +272,23 @@
                   </div>
                 </div>
 
-                <!-- Row 2: Type de Projet + Budget -->
+                <!-- Row 2: Phone + Type de Projet -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                  <div class="group space-y-1">
+                    <label
+                      class="block text-sm font-semibold text-[var(--primary)]"
+                    >
+                      Téléphone (Whatsapp)*
+                    </label>
+                    <input
+                      v-model="form.phone"
+                      type="tel"
+                      placeholder="+237 6XX XXX XXX"
+                      required
+                      class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-2 md:py-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
+                    />
+                  </div>
+
                   <div class="group space-y-1 relative">
                     <label
                       class="block text-sm font-semibold text-gray-500 group-focus-within:text-[var(--primary)]"
@@ -285,10 +300,16 @@
                       required
                       class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-2 md:py-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
                     >
-                      <option value="" disabled>Sélectionnez un type</option>
-                      <option value="web">Application Web (SaaS)</option>
-                      <option value="mobile">Mobile (iOS / Android)</option>
-                      <option value="cloud">Cloud & DevOps</option>
+                      <option class="dark:text-black" value="" disabled>Sélectionnez un type</option>
+                      <option class="dark:text-black" value="web">Application Web (SaaS)</option>
+                      <option class="dark:text-black" value="mobile">Mobile (iOS / Android)</option>
+                      <option class="dark:text-black" value="ecommerce">E-commerce / Boutique en ligne</option>
+                      <option class="dark:text-black" value="vitrine">Site Vitrine / Landing Page</option>
+                      <option class="dark:text-black" value="software">Logiciel sur Mesure (Desktop)</option>
+                      <option class="dark:text-black" value="ai">Intelligence Artificielle & Data</option>
+                      <option class="dark:text-black" value="cloud">Cloud & DevOps (Infrastructure)</option>
+                      <option class="dark:text-black" value="design">Design UX/UI & Branding</option>
+                      <option class="dark:text-black" value="audit">Audit & Conseil Technique</option>
                     </select>
                     <div
                       class="absolute right-0 bottom-3 pointer-events-none text-gray-400 dark:text-gray-500"
@@ -308,6 +329,10 @@
                       </svg>
                     </div>
                   </div>
+                </div>
+
+                <!-- Row 3: Budget -->
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-10">
 
                   <div class="group space-y-1 relative">
                     <label
@@ -319,28 +344,12 @@
                       v-model="form.budget"
                       class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-2 md:py-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
                     >
-                      <option value="">Non défini</option>
-                      <option value="5k-15k">5k - 15k €</option>
-                      <option value="15k-50k">15k - 50k €</option>
-                      <option value="50k+">50k+ €</option>
+                      <option class="dark:text-black" value="">Non défini</option>
+                      <option class="dark:text-black" value="50000FCFA-150000FCFA">50,000 - 150,000 FCFA</option>
+                      <option class="dark:text-black" value="150000FCFA-500000FCFA">150,000 - 500,000 FCFA</option>
+                      <option class="dark:text-black" value="500000FCFA-1000000FCFA">500,000 - 1,000,000 FCFA</option>
+                      <option class="dark:text-black" value="1000000FCFA+">1,000,000+ FCFA</option>
                     </select>
-                    <!-- <div
-                      class="absolute right-0 bottom-3 pointer-events-none text-gray-400 dark:text-gray-500"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="m6 9 6 6 6-6" />
-                      </svg>
-                    </div> -->
                   </div>
                 </div>
 
@@ -356,27 +365,8 @@
                     rows="3"
                     required
                     placeholder="Parlez-nous de vos objectifs et de vos contraintes..."
-                    class="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 py-3 md:py-2 resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
+                    class="w-full bg-transparent  dark:border-gray-600 py-3 md:py-2 resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-[var(--primary)] outline-none transition-colors duration-300 text-sm"
                   ></textarea>
-                </div>
-
-                <!-- Row 4: Checkbox -->
-                <div class="flex items-start gap-3">
-                  <input
-                    id="agree"
-                    v-model="form.agree"
-                    type="checkbox"
-                    required
-                    class="accent-[var(--primary)] cursor-pointer rounded border-gray-400 dark:border-gray-600"
-                  />
-                  <label
-                    for="agree"
-                    class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed cursor-pointer"
-                  >
-                    J'accepte que l'ingénierie de
-                    <strong>BodyMacs</strong> traite mes données pour me
-                    recontacter dans le cadre de ma demande.
-                  </label>
                 </div>
 
                 <!-- Submit Button -->
@@ -418,13 +408,10 @@ const loading = ref(false); // <-- Ajoute ça
 const form = ref({
   name: "",
   email: "",
-  company: "",
   phone: "",
   projectType: "",
   budget: "",
-  timeline: "",
   message: "",
-  agree: false,
 });
 
 const showSuccess = ref(false);
@@ -474,13 +461,10 @@ const submitForm = async () => {
     form.value = {
       name: "",
       email: "",
-      company: "",
       phone: "",
       projectType: "",
       budget: "",
-      timeline: "",
       message: "",
-      agree: false,
     };
   } catch (err) {
     errorMessage.value = "Une erreur est survenue. Veuillez réessayer.";
@@ -506,11 +490,9 @@ const sendEmail = () => {
       {
         from_name: form.value.name,
         from_email: form.value.email,
-        company: form.value.company,
         phone: form.value.phone,
         projectType: form.value.projectType,
         budget: form.value.budget,
-        timeline: form.value.timeline,
         message: form.value.message,
         time: time,
       },

@@ -66,7 +66,7 @@ import { Plus, Minus } from "lucide-vue-next";
 const faqs = ref([
   {
     q: "Quel est le délai minimum pour un projet ?",
-    a: "Un MVP simple peut être livré en 4-6 semaines. Un projet plus complet demande 6-12 mois. Nous établissons une timeline réaliste lors de la consultation.",
+    a: "Un MVP simple peut être livré en 1-2 semaines. Un projet plus complet demande 4-6 mois. Nous établissons une timeline réaliste lors de la consultation.",
     open: false,
   },
   {
@@ -81,7 +81,7 @@ const faqs = ref([
   },
   {
     q: "Quel est le coût pour un développeur dédié ?",
-    a: "Accès à un ingénieur senior (backend, frontend ou mobile) à partir de 4,500€/mois pour une intégration directe à votre équipe.",
+    a: "Accès à un ingénieur senior (backend, frontend ou mobile) à partir de 150,000FCFA/mois pour une intégration directe à votre équipe.",
     open: false,
   },
   {
