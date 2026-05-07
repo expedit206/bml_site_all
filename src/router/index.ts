@@ -1,41 +1,30 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "/",
-    name: "home",
-    component: () => import("../pages/Home.vue"),
+    path: '/',
+    name: 'home',
+    component: () => import('../pages/Home.vue'),
   },
-  {
-    path: "/services",
-    name: "services",
-    component: () => import("../pages/Services.vue"),
-  },
-  {
-    path: "/realisations",
-    name: "realisations",
-    component: () => import("../pages/Realisations.vue"),
-  },
-  {
-    path: "/about",
-    name: "about",
-    component: () => import("../pages/About.vue"),
-  },
-  {
-    path: "/contact",
-    name: "contact",
-    component: () => import("../pages/Contact.vue"),
-  },
-  {
-    path: "/faq",
-    name: "faq",
-    component: () => import("../pages/Faq.vue"),
-  },
-];
+  // Toutes les anciennes routes redirigent vers la home (single landing page)
+  { path: '/services',     redirect: '/' },
+  { path: '/realisations', redirect: '/' },
+  { path: '/about',        redirect: '/' },
+  { path: '/contact',      redirect: '/' },
+  { path: '/faq',          redirect: '/' },
+  // Catch-all
+  { path: '/:pathMatch(.*)*', redirect: '/' },
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth', top: 80 }
+    }
+    return { top: 0, behavior: 'smooth' }
+  },
+})
 
-export default router;
+export default router

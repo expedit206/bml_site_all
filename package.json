@@ -11,11 +11,16 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@motionone/dom": "^10.18.0",
+    "@types/three": "^0.184.0",
     "@unhead/vue": "^1.11.20",
+    "animejs": "^4.3.6",
     "canvas-confetti": "^1.9.4",
     "emailjs-com": "^3.2.0",
+    "gsap": "^3.15.0",
     "i18next": "^25.8.12",
     "lucide-vue-next": "^0.576.0",
+    "three": "^0.184.0",
     "vue": "^3.4.21",
     "vue-i18n": "^11.2.8",
     "vue-i18next": "^0.9.4",

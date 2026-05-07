@@ -171,4 +171,8 @@
   .hover-glow {
     @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20;
   }
+
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }

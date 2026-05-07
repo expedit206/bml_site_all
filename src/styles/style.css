@@ -29,7 +29,35 @@
   body {
     @apply bg-[var(--background)] text-[var(--text-main)];
     font-family: "Geist", "Inter", "system-ui", "sans-serif";
-    font-feature-settings:
-      "cv02", "cv03", "cv04", "cv11"; /* Optimisation pour Inter/Geist */
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
+
+  /* Selection */
+  ::selection { background: rgba(243,146,0,.3); color: var(--text-main); }
 }
+
+/* Global animation utilities */
+@keyframes animate-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: animate-fade-in .7s ease-out forwards; }
+
+/* Section reveal helper */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Smooth page transitions */
+.page-enter-active, .page-leave-active { transition: opacity .4s ease, transform .4s ease; }
+.page-enter-from { opacity: 0; transform: translateY(10px); }
+.page-leave-to   { opacity: 0; transform: translateY(-10px); }
